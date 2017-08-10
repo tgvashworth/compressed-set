@@ -1,0 +1,1092 @@
+Statistical profiling result from isolate-0x102800000-v8.log, (35978 ticks, 1579 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    667    1.9%          /usr/lib/system/libsystem_m.dylib
+    341    0.9%          /usr/lib/system/libsystem_pthread.dylib
+      9    0.0%          /usr/lib/system/libsystem_platform.dylib
+      4    0.0%          /usr/lib/system/libsystem_malloc.dylib
+      2    0.0%          /usr/lib/system/libsystem_c.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+   2577    7.2%    7.4%  LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+   2544    7.1%    7.3%  Stub: LoadICTrampolineStub
+   1825    5.1%    5.2%  LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1668    4.6%    4.8%  LazyCompile: *SmallInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:396:46
+   1564    4.3%    4.5%  LazyCompile: *BigInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:328:46
+   1513    4.2%    4.3%  LazyCompile: *BigInteger._multiplyBySmall /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:362:54
+   1140    3.2%    3.3%  LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+   1103    3.1%    3.2%  LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+   1023    2.8%    2.9%  LazyCompile: ~truncate /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:71:22
+    983    2.7%    2.8%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+    900    2.5%    2.6%  LazyCompile: *BigInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:392:44
+    674    1.9%    1.9%  Stub: ArraySingleArgumentConstructorStub_FAST_HOLEY_DOUBLE_ELEMENTS
+    631    1.8%    1.8%  Stub: BinaryOpICStub(BIT_AND:Number*Number->Smi)
+    607    1.7%    1.7%  Stub: CompareICStub {1}
+    595    1.7%    1.7%  LazyCompile: *Integer /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:10:21
+    459    1.3%    1.3%  Stub: CompareICStub {2}
+    436    1.2%    1.2%  Stub: BinaryOpICStub(DIV:Number*Smi->Number)
+    419    1.2%    1.2%  Stub: MathPowStub
+    401    1.1%    1.1%  Builtin: MathFloor
+    394    1.1%    1.1%  LazyCompile: *SmallInteger.add /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:133:43
+    336    0.9%    1.0%  Stub: CallICStub(args(1), NOT_NULL_OR_UNDEFINED, 
+    287    0.8%    0.8%  LazyCompile: *parseValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1192:24
+    284    0.8%    0.8%  Stub: LoadConstantStub {2}
+    278    0.8%    0.8%  Stub: BinaryOpICStub(SUB:Number*Smi->Number)
+    264    0.7%    0.8%  Handler: Math
+    247    0.7%    0.7%  LazyCompile: *add /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:76:17
+    244    0.7%    0.7%  Builtin: JSConstructStubGeneric
+    231    0.6%    0.7%  Stub: ToBooleanICStub(Smi)
+    181    0.5%    0.5%  Stub: FastNewObjectStub
+    181    0.5%    0.5%  LazyCompile: *pow native math.js:28:19
+    180    0.5%    0.5%  Stub: CEntryStub
+    179    0.5%    0.5%  Stub: GrowArrayElementsStub
+    160    0.4%    0.5%  Builtin: ArgumentsAdaptorTrampoline
+    157    0.4%    0.4%  Stub: CallICStub(args(0), NOT_NULL_OR_UNDEFINED, 
+    156    0.4%    0.4%  Stub: CallICStub(args(1), ANY, 
+    152    0.4%    0.4%  Builtin: Call_ReceiverIsNotNullOrUndefined
+    144    0.4%    0.4%  LazyCompile: *BigInteger /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:16:24
+    130    0.4%    0.4%  LazyCompile: *isPrecise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:30:23
+    128    0.4%    0.4%  LazyCompile: *SmallInteger /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:23:26
+    117    0.3%    0.3%  Stub: LoadConstantStub {3}
+    113    0.3%    0.3%  Stub: GrowArrayElementsStub {1}
+    113    0.3%    0.3%  Builtin: Construct
+    111    0.3%    0.3%  Stub: ToNumberStub
+    111    0.3%    0.3%  Builtin: CallFunction_ReceiverIsAny
+    104    0.3%    0.3%  Handler: length
+    103    0.3%    0.3%  Builtin: MathCeil
+    100    0.3%    0.3%  Stub: LoadConstantStub {6}
+     98    0.3%    0.3%  Stub: CallICTrampolineStub {2}
+     96    0.3%    0.3%  LazyCompile: *BigInteger.add /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:120:41
+     91    0.3%    0.3%  Handler: times
+     80    0.2%    0.2%  Handler: square
+     79    0.2%    0.2%  Stub: VectorStoreICStub
+     70    0.2%    0.2%  Stub: LoadConstantStub {8}
+     68    0.2%    0.2%  Stub: CallICTrampolineStub {1}
+     66    0.2%    0.2%  Stub: ToBooleanICStub(Bool)
+     59    0.2%    0.2%  Stub: KeyedLoadICTrampolineStub
+     55    0.2%    0.2%  Builtin: ConstructFunction
+     52    0.1%    0.1%  Stub: LoadConstantStub {4}
+     50    0.1%    0.1%  LazyCompile: *parseStringValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1145:30
+     48    0.1%    0.1%  LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     45    0.1%    0.1%  Stub: FastArrayPushStub
+     42    0.1%    0.1%  Stub: LoadConstantStub {5}
+     41    0.1%    0.1%  Stub: CallICTrampolineStub
+     39    0.1%    0.1%  Stub: LoadFieldStub
+     38    0.1%    0.1%  LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+     32    0.1%    0.1%  Stub: LoadConstantStub {7}
+     32    0.1%    0.1%  Stub: CallICStub(args(2), NOT_NULL_OR_UNDEFINED, 
+     31    0.1%    0.1%  LazyCompile: *<anonymous> /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:958:42
+     31    0.1%    0.1%  Builtin: CallFunction_ReceiverIsNullOrUndefined
+     27    0.1%    0.1%  Stub: ToStringStub
+     26    0.1%    0.1%  LazyCompile: *Hash crypto.js:53:14
+     25    0.1%    0.1%  Handler: times {1}
+     23    0.1%    0.1%  Stub: LoadFastElementStub
+     21    0.1%    0.1%  Builtin: Call_ReceiverIsNullOrUndefined
+     18    0.1%    0.1%  Stub: NumberToStringStub
+     18    0.1%    0.1%  LazyCompile: *charCodeAt native string.js:50:28
+     16    0.0%    0.0%  Stub: LoadIndexedStringStub
+     15    0.0%    0.0%  Stub: LoadFieldStub {1}
+     15    0.0%    0.0%  Stub: CallICTrampolineStub {3}
+     15    0.0%    0.0%  LazyCompile: *toLowerCase native string.js:348:29
+     15    0.0%    0.0%  Handler: square {1}
+     14    0.0%    0.0%  Stub: LoadConstantStub
+     13    0.0%    0.0%  LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     12    0.0%    0.0%  Stub: CallConstructStub
+     12    0.0%    0.0%  Handler: charCodeAt
+     12    0.0%    0.0%  Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      9    0.0%    0.0%  Stub: LoadFastElementStub {1}
+      8    0.0%    0.0%  Stub: LoadConstantStub {10}
+      7    0.0%    0.0%  Stub: LoadFieldStub {2}
+      7    0.0%    0.0%  Handler: toLowerCase
+      6    0.0%    0.0%  Stub: RecordWriteStub
+      6    0.0%    0.0%  Stub: GrowArrayElementsStub {2}
+      6    0.0%    0.0%  Stub: FastNewClosureStub
+      6    0.0%    0.0%  LazyCompile: ~parseStringValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1145:30
+      6    0.0%    0.0%  LazyCompile: *next native array-iterator.js:32:27
+      6    0.0%    0.0%  LazyCompile: *SmallInteger.toString /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1129:48
+      6    0.0%    0.0%  Handler: add {1}
+      6    0.0%    0.0%  Handler: add
+      5    0.0%    0.0%  Stub: StringToNumberStub
+      5    0.0%    0.0%  Stub: InstanceOfStub
+      5    0.0%    0.0%  Stub: CompareICStub {3}
+      5    0.0%    0.0%  LazyCompile: *slice native string.js:246:21
+      4    0.0%    0.0%  Stub: SubStringStub
+      4    0.0%    0.0%  Stub: LoadConstantStub {9}
+      3    0.0%    0.0%  Stub: NonNumberToNumberStub
+      3    0.0%    0.0%  Stub: CallICTrampolineStub {4}
+      3    0.0%    0.0%  Stub: CallApiCallbackStub {1}
+      3    0.0%    0.0%  Stub: CallApiCallbackStub
+      3    0.0%    0.0%  Stub: CEntryStub {1}
+      3    0.0%    0.0%  Stub: BinaryOpICStub(MUL:Generic*Smi->Smi)
+      3    0.0%    0.0%  Stub: BinaryOpICStub(DIV:Number*Number->Number)
+      3    0.0%    0.0%  LazyCompile: *parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      3    0.0%    0.0%  LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      3    0.0%    0.0%  LazyCompile: *LazyTransform internal/streams/lazy_transform.js:11:23
+      3    0.0%    0.0%  Handler: contains
+      2    0.0%    0.0%  Stub: CompareICStub {5}
+      2    0.0%    0.0%  LazyCompile: ~add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      2    0.0%    0.0%  Handler: push
+      2    0.0%    0.0%  Handler: add {2}
+      2    0.0%    0.0%  Builtin: JSConstructStubApi
+      2    0.0%    0.0%  Builtin: Call_ReceiverIsAny
+      1    0.0%    0.0%  Stub: ToIntegerStub
+      1    0.0%    0.0%  Stub: LoadConstantStub {1}
+      1    0.0%    0.0%  Stub: FastCloneShallowArrayStub
+      1    0.0%    0.0%  Stub: CompareICStub {6}
+      1    0.0%    0.0%  Stub: CompareICStub {4}
+      1    0.0%    0.0%  Stub: CompareICStub
+      1    0.0%    0.0%  Stub: CallICStub(args(3), ANY, 
+      1    0.0%    0.0%  LazyCompile: ~values native array-iterator.js:65:21
+      1    0.0%    0.0%  LazyCompile: ~Random.shuffle /Users/tashworth/work/hodges-filter/node_modules/random-js/lib/random.js:545:29
+      1    0.0%    0.0%  LazyCompile: *log native math.js:25:17
+      1    0.0%    0.0%  LazyCompile: *InnerArrayIncludes native array.js:1279:28
+      1    0.0%    0.0%  Handler: next
+      1    0.0%    0.0%  Builtin: StringConstructor
+      1    0.0%    0.0%  Builtin: InterruptCheck
+      1    0.0%    0.0%  Builtin: HandleApiCall
+      1    0.0%    0.0%  Builtin: FunctionHasInstance
+
+ [C++]:
+   ticks  total  nonlib   name
+   1869    5.2%    5.3%  v8::internal::Accessors::ArrayLengthSetter(v8::Local<v8::Name>, v8::Local<v8::Value>, v8::PropertyCallbackInfo<void> const&)
+    961    2.7%    2.7%  v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+    335    0.9%    1.0%  v8::internal::PropertyCallbackArguments::Call(void (*)(v8::Local<v8::Name>, v8::Local<v8::Value>, v8::PropertyCallbackInfo<void> const&), v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>)
+    201    0.6%    0.6%  node::crypto::Hash::New(v8::FunctionCallbackInfo<v8::Value> const&)
+    112    0.3%    0.3%  _szone_malloc_should_clear
+     90    0.3%    0.3%  __malloc_initialize
+     76    0.2%    0.2%  v8::internal::StackFrameIterator::StackFrameIterator(v8::internal::Isolate*)
+     68    0.2%    0.2%  __os_nospin_lock_unlock_slow
+     67    0.2%    0.2%  sha256_block_data_order_avx2
+     64    0.2%    0.2%  v8::internal::Runtime_StringToLowerCase(int, v8::internal::Object**, v8::internal::Isolate*)
+     63    0.2%    0.2%  v8::internal::StackFrame::ComputeType(v8::internal::StackFrameIteratorBase const*, v8::internal::StackFrame::State*)
+     59    0.2%    0.2%  v8::internal::InnerPointerToCodeCache::GetCacheEntry(unsigned char*)
+     50    0.1%    0.1%  v8::internal::Heap::AllocateRaw(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+     49    0.1%    0.1%  v8::internal::JavaScriptFrameIterator::Advance()
+     38    0.1%    0.1%  v8::internal::RuntimeProfiler::MarkCandidatesForOptimization()
+     38    0.1%    0.1%  v8::internal::(anonymous namespace)::HandleApiCallHelper(v8::internal::Isolate*, v8::internal::(anonymous namespace)::BuiltinArguments<(v8::internal::BuiltinExtraArguments)3>)
+     36    0.1%    0.1%  v8::internal::StackGuard::HandleInterrupts()
+     33    0.1%    0.1%  _small_free_list_remove_ptr_no_clear
+     30    0.1%    0.1%  v8::internal::Object* v8::internal::VisitWeakList<v8::internal::JSFunction>(v8::internal::Heap*, v8::internal::Object*, v8::internal::WeakObjectRetainer*)
+     28    0.1%    0.1%  node::TTYWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     27    0.1%    0.1%  ___mach_stack_logging_enumerate_records
+     23    0.1%    0.1%  node::StringBytes::Encode(v8::Isolate*, char const*, unsigned long, node::encoding)
+     23    0.1%    0.1%  node::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     21    0.1%    0.1%  v8::internal::String::GetFlatContent()
+     20    0.1%    0.1%  v8::internal::RuntimeProfiler::MaybeOptimizeFullCodegen(v8::internal::JSFunction*, int, bool)
+     19    0.1%    0.1%  _update_cache_for_file_streams
+     18    0.1%    0.1%  v8::internal::Object::ToInt32(int*)
+     18    0.1%    0.1%  v8::internal::Factory::NewRawOneByteString(int, v8::internal::PretenureFlag)
+     17    0.0%    0.0%  v8::internal::Runtime_Interrupt(int, v8::internal::Object**, v8::internal::Isolate*)
+     17    0.0%    0.0%  v8::internal::GCTracer::Start(v8::internal::GarbageCollector, char const*, char const*)
+     16    0.0%    0.0%  v8::internal::LookupIterator::State v8::internal::LookupIterator::LookupInRegularHolder<false>(v8::internal::Map*, v8::internal::JSReceiver*)
+     15    0.0%    0.0%  v8::internal::JSReceiver::OrdinaryToPrimitive(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::OrdinaryToPrimitiveHint)
+     15    0.0%    0.0%  v8::internal::Heap::SetStackLimits()
+     15    0.0%    0.0%  v8::internal::(anonymous namespace)::InstantiateObject(v8::internal::Isolate*, v8::internal::Handle<v8::internal::ObjectTemplateInfo>, v8::internal::Handle<v8::internal::JSReceiver>, bool)
+     15    0.0%    0.0%  node::ParseEncoding(char const*, node::encoding)
+     14    0.0%    0.0%  v8::internal::Heap::AllocateRawOneByteString(int, v8::internal::PretenureFlag)
+     13    0.0%    0.0%  v8::internal::Object::Multiply(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+     11    0.0%    0.0%  _free_small
+     11    0.0%    0.0%  __enlarge
+     10    0.0%    0.0%  v8::internal::StandardFrame::ComputeCallerState(v8::internal::StackFrame::State*) const
+     10    0.0%    0.0%  v8::internal::SemiSpace::Swap(v8::internal::SemiSpace*, v8::internal::SemiSpace*)
+     10    0.0%    0.0%  v8::internal::IsUnmodifiedHeapObject(v8::internal::Object**)
+     10    0.0%    0.0%  v8::internal::Heap::CopyJSObject(v8::internal::JSObject*, v8::internal::AllocationSite*)
+     10    0.0%    0.0%  v8::internal::Factory::SetNumberStringCache(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::String>)
+     10    0.0%    0.0%  v8::Value::IsUint8Array() const
+      9    0.0%    0.0%  void v8::internal::FreeList::ForAllFreeListCategories<v8::internal::FreeList::Available()::'lambda'(v8::internal::FreeListCategory*)>(v8::internal::FreeList::Available()::'lambda'(v8::internal::FreeListCategory*))
+      9    0.0%    0.0%  void v8::Utf8WriterVisitor::Visit<unsigned char>(unsigned char const*, int)
+      9    0.0%    0.0%  v8::internal::modulo(double, double)
+      9    0.0%    0.0%  v8::internal::ScavengeWeakObjectRetainer::RetainAs(v8::internal::Object*)
+      9    0.0%    0.0%  v8::internal::Runtime_Multiply(int, v8::internal::Object**, v8::internal::Isolate*)
+      9    0.0%    0.0%  v8::internal::NewSpace::UpdateAllocationInfo()
+      9    0.0%    0.0%  v8::internal::Factory::NewStringFromOneByte(v8::internal::Vector<unsigned char const>, v8::internal::PretenureFlag)
+      9    0.0%    0.0%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+      9    0.0%    0.0%  v8::internal::ApiNatives::InstantiateObject(v8::internal::Handle<v8::internal::ObjectTemplateInfo>, v8::internal::Handle<v8::internal::JSReceiver>)
+      9    0.0%    0.0%  v8::internal::(anonymous namespace)::ElementsAccessorBase<v8::internal::(anonymous namespace)::FastHoleyObjectElementsAccessor, v8::internal::(anonymous namespace)::ElementsKindTraits<(v8::internal::ElementsKind)3> >::GetEntryForIndex(v8::internal::JSObject*, v8::internal::FixedArrayBase*, unsigned int)
+      9    0.0%    0.0%  _free
+      8    0.0%    0.0%  void v8::internal::LookupIterator::NextInternal<false>(v8::internal::Map*, v8::internal::JSReceiver*)
+      8    0.0%    0.0%  v8::internal::ScavengeVisitor::VisitPointers(v8::internal::Object**, v8::internal::Object**)
+      8    0.0%    0.0%  v8::internal::Runtime_KeyedGetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      8    0.0%    0.0%  v8::internal::Object::GetMethod(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::Name>)
+      8    0.0%    0.0%  v8::internal::NewSpace::EnsureAllocation(int, v8::internal::AllocationAlignment)
+      8    0.0%    0.0%  int v8::internal::SlotSet::Iterate<void v8::internal::RememberedSet<(v8::internal::PointerDirection)1>::IterateWithWrapper<void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*)>(v8::internal::Heap*, void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*))::'lambda'(unsigned char*)>(void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*))
+      8    0.0%    0.0%  ___vfprintf
+      7    0.0%    0.0%  v8::internal::ScavengeVisitor::VisitPointer(v8::internal::Object**)
+      7    0.0%    0.0%  v8::internal::SaveContext::SaveContext(v8::internal::Isolate*)
+      7    0.0%    0.0%  v8::internal::LChunk::MarkEmptyBlocks()
+      7    0.0%    0.0%  v8::internal::FastDtoa(double, v8::internal::FastDtoaMode, int, v8::internal::Vector<char>, int*, int*)
+      7    0.0%    0.0%  v8::String::WriteUtf8(char*, int, int*, int) const
+      7    0.0%    0.0%  _OPENSSL_cleanse
+      6    0.0%    0.0%  v8::internal::String::ToNumber(v8::internal::Handle<v8::internal::String>)
+      6    0.0%    0.0%  v8::internal::Space::AllocationStep(unsigned char*, int)
+      6    0.0%    0.0%  v8::internal::Object::ToNumber(v8::internal::Handle<v8::internal::Object>)
+      6    0.0%    0.0%  _mprotect
+      5    0.0%    0.0%  void v8::internal::Heap::UpdateAllocationSite<(v8::internal::Heap::UpdateAllocationSiteMode)0>(v8::internal::HeapObject*, v8::internal::TemplateHashMapImpl<v8::internal::FreeStoreAllocationPolicy>*)
+      5    0.0%    0.0%  v8::internal::String::SlowEquals(v8::internal::String*)
+      5    0.0%    0.0%  v8::internal::Runtime_AllocateInTargetSpace(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::ParseAssignmentExpression(bool, v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, bool*)
+      5    0.0%    0.0%  v8::internal::JavaScriptFrame::GetFunctions(v8::internal::List<v8::internal::JSFunction*, v8::internal::FreeStoreAllocationPolicy>*) const
+      5    0.0%    0.0%  v8::internal::GlobalHandles::IdentifyWeakUnmodifiedObjects(bool (*)(v8::internal::Object**))
+      5    0.0%    0.0%  v8::internal::BiggestPowerTen(unsigned int, int, unsigned int*, int*)
+      5    0.0%    0.0%  v8::Value::IsExternal() const
+      5    0.0%    0.0%  node::crypto::Hash::HashUpdate(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.0%    0.0%  node::crypto::Hash::HashDigest(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.0%    0.0%  node::StringBytes::StorageSize(v8::Isolate*, v8::Local<v8::Value>, node::encoding)
+      5    0.0%    0.0%  _tiny_malloc_from_free_list
+      5    0.0%    0.0%  _sha256_block_data_order
+      4    0.0%    0.0%  void v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1>::VisitSpecialized<32>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      4    0.0%    0.0%  void node::BaseObject::WeakCallback<node::crypto::Hash>(v8::WeakCallbackInfo<node::crypto::Hash> const&)
+      4    0.0%    0.0%  v8::internal::StackFrameIterator::StackFrameIterator(v8::internal::Isolate*, v8::internal::ThreadLocalTop*)
+      4    0.0%    0.0%  v8::internal::Runtime_NumberToStringSkipCache(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.0%    0.0%  v8::internal::PowersOfTenCache::GetCachedPowerForBinaryExponentRange(int, int, v8::internal::DiyFp*, int*)
+      4    0.0%    0.0%  v8::internal::Object::SetProperty(v8::internal::LookupIterator*, v8::internal::Handle<v8::internal::Object>, v8::internal::LanguageMode, v8::internal::Object::StoreFromKeyed)
+      4    0.0%    0.0%  v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags)
+      4    0.0%    0.0%  v8::internal::HGraph::CreateBasicBlock()
+      4    0.0%    0.0%  v8::internal::Factory::NewNumber(double, v8::internal::PretenureFlag)
+      4    0.0%    0.0%  v8::internal::ConsString* v8::internal::String::VisitFlat<v8::internal::IteratingStringHasher>(v8::internal::IteratingStringHasher*, v8::internal::String*, int)
+      4    0.0%    0.0%  node::crypto::Hash::~Hash()
+      4    0.0%    0.0%  node::ParseEncoding(v8::Isolate*, v8::Local<v8::Value>, node::encoding)
+      4    0.0%    0.0%  int v8::internal::FlexibleBodyVisitor<v8::internal::StaticScavengeVisitor, v8::internal::FlexibleBodyDescriptor<8>, int>::VisitSpecialized<32>(v8::internal::Map*, v8::internal::HeapObject*)
+      3    0.0%    0.0%  void v8::internal::RememberedSet<(v8::internal::PointerDirection)1>::IterateMemoryChunks<void v8::internal::RememberedSet<(v8::internal::PointerDirection)1>::Iterate<void v8::internal::RememberedSet<(v8::internal::PointerDirection)1>::IterateWithWrapper<void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*)>(v8::internal::Heap*, void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*))::'lambda'(unsigned char*)>(v8::internal::Heap*, void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*))::'lambda'(v8::internal::MemoryChunk*)>(v8::internal::Heap*, void (*)(v8::internal::HeapObject**, v8::internal::HeapObject*))
+      3    0.0%    0.0%  void v8::internal::LookupIterator::Start<true>()
+      3    0.0%    0.0%  v8::platform::DefaultPlatform::MonotonicallyIncreasingTime()
+      3    0.0%    0.0%  v8::internal::Zone::~Zone()
+      3    0.0%    0.0%  v8::internal::StandardFrame::IterateCompiledFrame(v8::internal::ObjectVisitor*) const
+      3    0.0%    0.0%  v8::internal::StackFrame::GetCallerState(v8::internal::StackFrame::State*) const
+      3    0.0%    0.0%  v8::internal::Scope::LookupLocal(v8::internal::AstRawString const*)
+      3    0.0%    0.0%  v8::internal::Scanner::SkipWhiteSpace()
+      3    0.0%    0.0%  v8::internal::Scanner::ScanIdentifierOrKeyword()
+      3    0.0%    0.0%  v8::internal::Runtime_AllocateHeapNumber(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.0%    0.0%  v8::internal::LookupIterator::PropertyOrElement(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, bool*, v8::internal::LookupIterator::Configuration)
+      3    0.0%    0.0%  v8::internal::LayoutDescriptorHelper::IsTagged(int, int, int*)
+      3    0.0%    0.0%  v8::internal::LCodeGenBase::GenerateBody()
+      3    0.0%    0.0%  v8::internal::LCodeGen::WriteTranslation(v8::internal::LEnvironment*, v8::internal::Translation*)
+      3    0.0%    0.0%  v8::internal::Isolate::use_crankshaft() const
+      3    0.0%    0.0%  v8::internal::Heap::Scavenge()
+      3    0.0%    0.0%  v8::internal::Heap::DoScavenge(v8::internal::ObjectVisitor*, unsigned char*)
+      3    0.0%    0.0%  v8::internal::HInstruction::InsertAfter(v8::internal::HInstruction*)
+      3    0.0%    0.0%  v8::internal::HGraphBuilder::CreateGraph()
+      3    0.0%    0.0%  v8::internal::HBasicBlock::CreateSimulate(v8::internal::BailoutId, v8::internal::RemovableSimulate)
+      3    0.0%    0.0%  v8::internal::GlobalHandles::Node::Release()
+      3    0.0%    0.0%  v8::internal::FunctionCallbackArguments::Call(void (*)(v8::FunctionCallbackInfo<v8::Value> const&))
+      3    0.0%    0.0%  v8::internal::FlexibleBodyVisitor<v8::internal::StaticScavengeVisitor, v8::internal::FlexibleBodyDescriptor<8>, int>::Visit(v8::internal::Map*, v8::internal::HeapObject*)
+      3    0.0%    0.0%  v8::internal::FixStaleLeftTrimmedHandlesVisitor::VisitPointers(v8::internal::Object**, v8::internal::Object**)
+      3    0.0%    0.0%  v8::internal::Factory::NumberToString(v8::internal::Handle<v8::internal::Object>, bool)
+      3    0.0%    0.0%  v8::internal::Factory::CopyJSObject(v8::internal::Handle<v8::internal::JSObject>)
+      3    0.0%    0.0%  v8::internal::ExpressionClassifier<v8::internal::ParserTraits>::Accumulate(v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, unsigned int, bool)
+      3    0.0%    0.0%  v8::internal::ExitFrame::ComputeCallerState(v8::internal::StackFrame::State*) const
+      3    0.0%    0.0%  v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*)
+      3    0.0%    0.0%  v8::internal::ConsString* v8::internal::String::VisitFlat<v8::Utf8WriterVisitor>(v8::Utf8WriterVisitor*, v8::internal::String*, int)
+      3    0.0%    0.0%  v8::internal::AggregatedMemoryHistogram<v8::internal::Histogram>::AddSample(double, double)
+      3    0.0%    0.0%  v8::base::TimeTicks::HighResolutionNow()
+      3    0.0%    0.0%  v8::String::IsExternalOneByte() const
+      3    0.0%    0.0%  node::MaybeStackBuffer<char, 1024ul>::AllocateSufficientStorage(unsigned long)
+      3    0.0%    0.0%  ___gdtoa
+      3    0.0%    0.0%  _SHA256_Update
+      3    0.0%    0.0%  _EVP_MD_CTX_cleanup
+      2    0.0%    0.0%  void v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)0>::VisitSpecialized<16>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      2    0.0%    0.0%  void v8::internal::LookupIterator::NextInternal<true>(v8::internal::Map*, v8::internal::JSReceiver*)
+      2    0.0%    0.0%  void v8::internal::BodyDescriptorBase::IteratePointers<v8::internal::MarkCompactMarkingVisitor>(v8::internal::Heap*, v8::internal::HeapObject*, int, int)
+      2    0.0%    0.0%  void v8::internal::BodyDescriptorBase::IterateBodyImpl<v8::internal::StaticScavengeVisitor>(v8::internal::Heap*, v8::internal::HeapObject*, int, int)
+      2    0.0%    0.0%  v8::internal::Zone::New(unsigned long)
+      2    0.0%    0.0%  v8::internal::ThreadManager::Iterate(v8::internal::ObjectVisitor*)
+      2    0.0%    0.0%  v8::internal::ThreadId::GetCurrentThreadId()
+      2    0.0%    0.0%  v8::internal::TemplateHashMapImpl<v8::internal::FreeStoreAllocationPolicy>::LookupOrInsert(void*, unsigned int, v8::internal::FreeStoreAllocationPolicy)
+      2    0.0%    0.0%  v8::internal::String::IsOneByteEqualTo(v8::internal::Vector<unsigned char const>)
+      2    0.0%    0.0%  v8::internal::StoreBuffer::MoveEntriesToRememberedSet()
+      2    0.0%    0.0%  v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1>::Visit(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      2    0.0%    0.0%  v8::internal::Scavenger::SelectScavengingVisitorsTable()
+      2    0.0%    0.0%  v8::internal::Scanner::Next()
+      2    0.0%    0.0%  v8::internal::SafepointEntry::HasRegisters() const
+      2    0.0%    0.0%  v8::internal::PerIsolateAssertScope<(v8::internal::PerIsolateAssertType)0, true>::IsAllowed(v8::internal::Isolate*)
+      2    0.0%    0.0%  v8::internal::PauseAllocationObserversScope::PauseAllocationObserversScope(v8::internal::Heap*)
+      2    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::ParsePrimaryExpression(v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, bool*)
+      2    0.0%    0.0%  v8::internal::Parser::ParseEagerFunctionBody(v8::internal::AstRawString const*, int, v8::internal::ParserFormalParameters const&, v8::internal::FunctionKind, v8::internal::FunctionLiteral::FunctionType, bool*)
+      2    0.0%    0.0%  v8::internal::PagedSpace::SizeOfObjects()
+      2    0.0%    0.0%  v8::internal::Object::GetProperty(v8::internal::LookupIterator*)
+      2    0.0%    0.0%  v8::internal::NewSpace::PauseAllocationObservers()
+      2    0.0%    0.0%  v8::internal::LargeObjectSpace::SizeOfObjects()
+      2    0.0%    0.0%  v8::internal::LParallelMove::IsRedundant() const
+      2    0.0%    0.0%  v8::internal::LGapResolver::BuildInitialMoveList(v8::internal::LParallelMove*)
+      2    0.0%    0.0%  v8::internal::LCodeGen::GenerateBodyInstructionPre(v8::internal::LInstruction*)
+      2    0.0%    0.0%  v8::internal::LCodeGen::GenerateBodyInstructionPost(v8::internal::LInstruction*)
+      2    0.0%    0.0%  v8::internal::LAllocator::AllocateRegisters()
+      2    0.0%    0.0%  v8::internal::IsUnscavengedHeapObject(v8::internal::Heap*, v8::internal::Object**)
+      2    0.0%    0.0%  v8::internal::Heap::ProcessPretenuringFeedback()
+      2    0.0%    0.0%  v8::internal::Heap::GarbageCollectionEpilogue()
+      2    0.0%    0.0%  v8::internal::Heap::FullSizeNumberStringCacheLength()
+      2    0.0%    0.0%  v8::internal::GlobalHandles::Node::CollectPhantomCallbackData(v8::internal::Isolate*, v8::internal::List<v8::internal::GlobalHandles::PendingPhantomCallback, v8::internal::FreeStoreAllocationPolicy>*)
+      2    0.0%    0.0%  v8::internal::GlobalHandles::IterateNewSpaceStrongAndDependentRoots(v8::internal::ObjectVisitor*)
+      2    0.0%    0.0%  v8::internal::GlobalHandles::DispatchPendingPhantomCallbacks(bool)
+      2    0.0%    0.0%  v8::internal::GCTracer::Scope::Scope(v8::internal::GCTracer*, v8::internal::GCTracer::Scope::ScopeId)
+      2    0.0%    0.0%  v8::internal::Factory::NewNumberFromUint(unsigned int, v8::internal::PretenureFlag)
+      2    0.0%    0.0%  v8::internal::Factory::LookupSingleCharacterStringFromCode(unsigned int)
+      2    0.0%    0.0%  v8::internal::DoubleToCString(double, v8::internal::Vector<char>)
+      2    0.0%    0.0%  v8::internal::CanonicalHandleScope::Lookup(v8::internal::Object*)
+      2    0.0%    0.0%  v8::internal::Assembler::j(v8::internal::Condition, v8::internal::Label*, v8::internal::Label::Distance)
+      2    0.0%    0.0%  v8::internal::ArrayBufferTracker::FreeDead(bool)
+      2    0.0%    0.0%  v8::internal::(anonymous namespace)::FastElementsAccessor<v8::internal::(anonymous namespace)::FastHoleyObjectElementsAccessor, v8::internal::(anonymous namespace)::ElementsKindTraits<(v8::internal::ElementsKind)3> >::AddImpl(v8::internal::Handle<v8::internal::JSObject>, unsigned int, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, unsigned int)
+      2    0.0%    0.0%  v8::internal::(anonymous namespace)::ElementsAccessorBase<v8::internal::(anonymous namespace)::FastHoleyObjectElementsAccessor, v8::internal::(anonymous namespace)::ElementsKindTraits<(v8::internal::ElementsKind)3> >::Set(v8::internal::Handle<v8::internal::JSObject>, unsigned int, v8::internal::Object*)
+      2    0.0%    0.0%  v8::base::RecursiveMutex::Unlock()
+      2    0.0%    0.0%  v8::Value::ToString(v8::Local<v8::Context>) const
+      2    0.0%    0.0%  v8::String::NewFromOneByte(v8::Isolate*, unsigned char const*, v8::NewStringType, int)
+      2    0.0%    0.0%  v8::HandleScope::Initialize(v8::Isolate*)
+      2    0.0%    0.0%  v8::External::Value() const
+      2    0.0%    0.0%  v8::EscapableHandleScope::Escape(v8::internal::Object**)
+      2    0.0%    0.0%  v8::EscapableHandleScope::EscapableHandleScope(v8::Isolate*)
+      2    0.0%    0.0%  node::StringBytes::GetExternalParts(v8::Isolate*, v8::Local<v8::Value>, char const**, unsigned long*)
+      2    0.0%    0.0%  node::Binding(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  int v8::internal::FlexibleBodyVisitor<v8::internal::StaticScavengeVisitor, v8::internal::FlexibleBodyDescriptor<8>, int>::VisitSpecialized<40>(v8::internal::Map*, v8::internal::HeapObject*)
+      2    0.0%    0.0%  int v8::internal::BinarySearch<(v8::internal::SearchMode)1, v8::internal::DescriptorArray>(v8::internal::DescriptorArray*, v8::internal::Name*, int, int*)
+      2    0.0%    0.0%  bool v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::SemiSpaceCopyObject<(v8::internal::AllocationAlignment)0>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*, int)
+      2    0.0%    0.0%  bool v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::PromoteObject<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1, (v8::internal::AllocationAlignment)0>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*, int)
+      2    0.0%    0.0%  _unwind_stack_from_table_index
+      2    0.0%    0.0%  _setvbuf
+      2    0.0%    0.0%  _mach_msg
+      2    0.0%    0.0%  _allocate_pages
+      2    0.0%    0.0%  __os_nospin_lock_lock_slow
+      2    0.0%    0.0%  __cxxabiv1::do_free(void*)
+      2    0.0%    0.0%  ___rec_open
+      2    0.0%    0.0%  ___rec_fpipe
+      2    0.0%    0.0%  _EVP_DigestFinal_ex
+      2    0.0%    0.0%  _CRYPTO_free
+      1    0.0%    0.0%  void v8::internal::WeakListVisitor<v8::internal::Context>::DoWeakList<v8::internal::JSFunction>(v8::internal::Heap*, v8::internal::Context*, v8::internal::WeakObjectRetainer*, int)
+      1    0.0%    0.0%  void v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1>::VisitSpecialized<48>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      1    0.0%    0.0%  void v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1>::VisitSpecialized<40>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      1    0.0%    0.0%  void v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectEvacuationStrategy<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)1>::VisitSpecialized<24>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      1    0.0%    0.0%  void v8::internal::RelocInfo::Visit<v8::internal::MarkCompactMarkingVisitor>(v8::internal::Heap*)
+      1    0.0%    0.0%  void std::__introsort_loop<v8::internal::VarAndOrder*, long, v8::internal::Vector<v8::internal::VarAndOrder>::RawComparer<int (*)(v8::internal::VarAndOrder const*, v8::internal::VarAndOrder const*)> >(v8::internal::VarAndOrder*, v8::internal::VarAndOrder*, long, v8::internal::Vector<v8::internal::VarAndOrder>::RawComparer<int (*)(v8::internal::VarAndOrder const*, v8::internal::VarAndOrder const*)>)
+      1    0.0%    0.0%  v8::internal::compiler::CodeGenerator::AssembleSourcePosition(v8::internal::compiler::Instruction*)
+      1    0.0%    0.0%  v8::internal::WeakHashTable::Put(v8::internal::Handle<v8::internal::WeakHashTable>, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::HeapObject>)
+      1    0.0%    0.0%  v8::internal::WeakHashTable::Lookup(v8::internal::Handle<v8::internal::HeapObject>)
+      1    0.0%    0.0%  v8::internal::VariableProxy::VariableProxy(v8::internal::Zone*, v8::internal::AstRawString const*, v8::internal::Variable::Kind, int, int)
+      1    0.0%    0.0%  v8::internal::VariableProxy::Accept(v8::internal::AstVisitor*)
+      1    0.0%    0.0%  v8::internal::Variable::IsGlobalObjectProperty() const
+      1    0.0%    0.0%  v8::internal::ValueContext::ReturnValue(v8::internal::HValue*)
+      1    0.0%    0.0%  v8::internal::V8::GetCurrentPlatform()
+      1    0.0%    0.0%  v8::internal::TypeFeedbackOracle::GetInfo(v8::internal::FeedbackVectorSlot)
+      1    0.0%    0.0%  v8::internal::Type::SlowIs(v8::internal::Type*)
+      1    0.0%    0.0%  v8::internal::TranslationBuffer::Add(int, v8::internal::Zone*)
+      1    0.0%    0.0%  v8::internal::Translation::StoreLiteral(int)
+      1    0.0%    0.0%  v8::internal::Translation::StoreInt32StackSlot(int)
+      1    0.0%    0.0%  v8::internal::Translation::StoreDoubleStackSlot(int)
+      1    0.0%    0.0%  v8::internal::TemplateHashMapImpl<v8::internal::ZoneAllocationPolicy>::LookupOrInsert(void*, unsigned int, v8::internal::ZoneAllocationPolicy)
+      1    0.0%    0.0%  v8::internal::String::SlowAsArrayIndex(unsigned int*)
+      1    0.0%    0.0%  v8::internal::Space::SizeOfObjects()
+      1    0.0%    0.0%  v8::internal::Space::ResumeAllocationObservers()
+      1    0.0%    0.0%  v8::internal::SimpleStringBuilder::Finalize()
+      1    0.0%    0.0%  v8::internal::SimpleStringBuilder::AddString(char const*)
+      1    0.0%    0.0%  v8::internal::SideEffectsTracker::ComputeInobjectField(v8::internal::HObjectAccess, int*)
+      1    0.0%    0.0%  v8::internal::SerializerDeserializer::Iterate(v8::internal::Isolate*, v8::internal::ObjectVisitor*)
+      1    0.0%    0.0%  v8::internal::SemiSpace::set_age_mark(unsigned char*)
+      1    0.0%    0.0%  v8::internal::Script::GetLineNumber(v8::internal::Handle<v8::internal::Script>, int)
+      1    0.0%    0.0%  v8::internal::ScopeInfo::ContextGlobalSlotIndex(v8::internal::Handle<v8::internal::ScopeInfo>, v8::internal::Handle<v8::internal::String>, v8::internal::VariableMode*, v8::internal::InitializationFlag*, v8::internal::MaybeAssignedFlag*)
+      1    0.0%    0.0%  v8::internal::Scope::CollectStackAndContextLocals(v8::internal::ZoneList<v8::internal::Variable*>*, v8::internal::ZoneList<v8::internal::Variable*>*, v8::internal::ZoneList<v8::internal::Variable*>*)
+      1    0.0%    0.0%  v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::EvacuateFixedArray(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*)
+      1    0.0%    0.0%  v8::internal::Scavenger::ScavengeObject(v8::internal::HeapObject**, v8::internal::HeapObject*)
+      1    0.0%    0.0%  v8::internal::ScavengeJob::ScheduleIdleTaskIfNeeded(v8::internal::Heap*, int)
+      1    0.0%    0.0%  v8::internal::Scanner::~Scanner()
+      1    0.0%    0.0%  v8::internal::Scanner::Scan()
+      1    0.0%    0.0%  v8::internal::SafepointTableBuilder::Emit(v8::internal::Assembler*, int)
+      1    0.0%    0.0%  v8::internal::SafepointEntry::HasRegisterAt(int) const
+      1    0.0%    0.0%  v8::internal::Runtime::GetObjectProperty(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::RelocIterator::next()
+      1    0.0%    0.0%  v8::internal::RelocInfoWriter::Write(v8::internal::RelocInfo const*)
+      1    0.0%    0.0%  v8::internal::RelocInfoWriter::FlushPosition()
+      1    0.0%    0.0%  v8::internal::ParserTraits::CheckCallable(v8::internal::Variable*, v8::internal::Expression*, int)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::ParseFormalParameterList(v8::internal::ParserFormalParameters*, v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::ParseExpression(bool, v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::ParseArguments(v8::internal::Scanner::Location*, v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::ParserTraits>::BindingPatternUnexpectedToken(v8::internal::ExpressionClassifier<v8::internal::ParserTraits>*)
+      1    0.0%    0.0%  v8::internal::Parser::ParseVariableDeclarations(v8::internal::ParserBase<v8::internal::ParserTraits>::VariableDeclarationContext, v8::internal::Parser::DeclarationParsingResult*, v8::internal::ZoneList<v8::internal::AstRawString const*>*, bool*)
+      1    0.0%    0.0%  v8::internal::Parser::ParseFunctionLiteral(v8::internal::AstRawString const*, v8::internal::Scanner::Location, v8::internal::FunctionNameValidity, v8::internal::FunctionKind, int, v8::internal::FunctionLiteral::FunctionType, v8::internal::LanguageMode, bool*)
+      1    0.0%    0.0%  v8::internal::PagedSpace::Waste()
+      1    0.0%    0.0%  v8::internal::PagedSpace::Size()
+      1    0.0%    0.0%  v8::internal::ObjectVisitor::Synchronize(v8::internal::VisitorSynchronization::SyncTag)
+      1    0.0%    0.0%  v8::internal::Object::SetPropertyInternal(v8::internal::LookupIterator*, v8::internal::Handle<v8::internal::Object>, v8::internal::LanguageMode, v8::internal::Object::StoreFromKeyed, bool*)
+      1    0.0%    0.0%  v8::internal::Object::SameValueZero(v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::Object::ConvertToName(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Object::AddDataProperty(v8::internal::LookupIterator*, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow, v8::internal::Object::StoreFromKeyed)
+      1    0.0%    0.0%  v8::internal::Object* v8::internal::VisitWeakList<v8::internal::Context>(v8::internal::Heap*, v8::internal::Object*, v8::internal::WeakObjectRetainer*)
+      1    0.0%    0.0%  v8::internal::NewSpace::ResumeAllocationObservers()
+      1    0.0%    0.0%  v8::internal::NewSpace::ResetAllocationInfo()
+      1    0.0%    0.0%  v8::internal::MemoryChunk::Initialize(v8::internal::Heap*, unsigned char*, unsigned long, unsigned char*, unsigned char*, v8::internal::Executability, v8::internal::Space*, v8::base::VirtualMemory*)
+      1    0.0%    0.0%  v8::internal::MarkCompactCollector::VisitLiveObjects(v8::internal::MemoryChunk*, v8::internal::MarkCompactCollector::HeapObjectVisitor*, v8::internal::MarkCompactCollector::IterationMode)
+      1    0.0%    0.0%  v8::internal::Map::SetPrototype(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::Object>, v8::internal::PrototypeOptimizationMode)
+      1    0.0%    0.0%  v8::internal::Map::InitializeDescriptors(v8::internal::DescriptorArray*, v8::internal::LayoutDescriptor*)
+      1    0.0%    0.0%  v8::internal::Malloced::New(unsigned long)
+      1    0.0%    0.0%  v8::internal::Malloced::Delete(void*)
+      1    0.0%    0.0%  v8::internal::MacroAssembler::MoveHeapObject(v8::internal::Register, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::MacroAssembler::Move(v8::internal::Register, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::MacroAssembler::LoadRoot(v8::internal::Register, v8::internal::Heap::RootListIndex)
+      1    0.0%    0.0%  v8::internal::Logger::SetUp(v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Logger::ApiObjectAccess(char const*, v8::internal::JSObject*)
+      1    0.0%    0.0%  v8::internal::LayoutDescriptor::IsTagged(int, int, int*)
+      1    0.0%    0.0%  v8::internal::LInstructionGap::CompileToNative(v8::internal::LCodeGen*)
+      1    0.0%    0.0%  v8::internal::LGapResolver::Resolve(v8::internal::LParallelMove*)
+      1    0.0%    0.0%  v8::internal::LEnvironment::AddValue(v8::internal::LOperand*, v8::internal::Representation, bool)
+      1    0.0%    0.0%  v8::internal::LCodeGenBase::DefineDeoptimizationLiteral(v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::LCodeGenBase::Comment(char const*, ...)
+      1    0.0%    0.0%  v8::internal::LCodeGenBase::AddStabilityDependency(v8::internal::Handle<v8::internal::Map>)
+      1    0.0%    0.0%  v8::internal::LCodeGen::EmitPushTaggedOperand(v8::internal::LOperand*)
+      1    0.0%    0.0%  v8::internal::LCodeGen::DoStoreNamedField(v8::internal::LStoreNamedField*)
+      1    0.0%    0.0%  v8::internal::LCodeGen::DoReturn(v8::internal::LReturn*)
+      1    0.0%    0.0%  v8::internal::LCodeGen::DoLoadNamedGeneric(v8::internal::LLoadNamedGeneric*)
+      1    0.0%    0.0%  v8::internal::LCodeGen::AddToTranslation(v8::internal::LEnvironment*, v8::internal::Translation*, v8::internal::LOperand*, bool, bool, int*, int*)
+      1    0.0%    0.0%  v8::internal::LChunkBuilder::VisitInstruction(v8::internal::HInstruction*)
+      1    0.0%    0.0%  v8::internal::LChunk::AddDeprecationDependency(v8::internal::Handle<v8::internal::Map>)
+      1    0.0%    0.0%  v8::internal::LAllocator::Use(v8::internal::LifetimePosition, v8::internal::LifetimePosition, v8::internal::LOperand*, v8::internal::LOperand*)
+      1    0.0%    0.0%  v8::internal::LAllocator::ConnectRanges()
+      1    0.0%    0.0%  v8::internal::LAllocator::ActiveToInactive(v8::internal::LiveRange*)
+      1    0.0%    0.0%  v8::internal::JavaScriptFrame::type() const
+      1    0.0%    0.0%  v8::internal::JavaScriptFrame::Iterate(v8::internal::ObjectVisitor*) const
+      1    0.0%    0.0%  v8::internal::JSReceiver::ToPrimitive(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::ToPrimitiveHint)
+      1    0.0%    0.0%  v8::internal::JSObjectWalkVisitor<v8::internal::AllocationSiteUsageContext>::StructureWalk(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.0%    0.0%  v8::internal::JSObject::MigrateToMap(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Map>, int)
+      1    0.0%    0.0%  v8::internal::JSObject::EnsureWritableFastElements(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.0%    0.0%  v8::internal::JSObject::AddDataElement(v8::internal::Handle<v8::internal::JSObject>, unsigned int, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow)
+      1    0.0%    0.0%  v8::internal::Isolate::Iterate(v8::internal::ObjectVisitor*, v8::internal::ThreadLocalTop*)
+      1    0.0%    0.0%  v8::internal::Heap::GarbageCollectionPrologue()
+      1    0.0%    0.0%  v8::internal::Heap::CopyFixedArrayAndGrow(v8::internal::FixedArray*, int, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Heap::CollectGarbage(v8::internal::GarbageCollector, char const*, char const*, v8::GCCallbackFlags)
+      1    0.0%    0.0%  v8::internal::Heap::AllocateTransitionArray(int)
+      1    0.0%    0.0%  v8::internal::Heap::AllocateHeapNumber(double, v8::internal::MutableMode, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Heap::AllocateFixedArray(int, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Heap::AllocateCode(int, bool)
+      1    0.0%    0.0%  v8::internal::HValue::RegisterUse(int, v8::internal::HValue*)
+      1    0.0%    0.0%  v8::internal::HType::FromValue(v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::context()
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::VisitVariableProxy(v8::internal::VariableProxy*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::VisitBlock(v8::internal::Block*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::VisitAssignment(v8::internal::Assignment*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::SetUpScope(v8::internal::Scope*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::PropertyAccessInfo::LoadResult(v8::internal::Handle<v8::internal::Map>)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::LookupAndMakeLive(v8::internal::Variable*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::BuildStoreNamedField(v8::internal::HOptimizedGraphBuilder::PropertyAccessInfo*, v8::internal::HValue*, v8::internal::HValue*)
+      1    0.0%    0.0%  v8::internal::HOptimizedGraphBuilder::BuildNamedAccess(v8::internal::PropertyAccessType, v8::internal::BailoutId, v8::internal::BailoutId, v8::internal::Expression*, v8::internal::FeedbackVectorSlot, v8::internal::HValue*, v8::internal::Handle<v8::internal::Name>, v8::internal::HValue*, bool)
+      1    0.0%    0.0%  v8::internal::HInstruction::position() const
+      1    0.0%    0.0%  v8::internal::HFlowEngine<v8::internal::HCheckTable, v8::internal::HCheckMapsEffects>::AnalyzeDominatedBlocks(v8::internal::HBasicBlock*, v8::internal::HCheckTable*)
+      1    0.0%    0.0%  v8::internal::HEnvironment::AddIncomingEdge(v8::internal::HBasicBlock*, v8::internal::HEnvironment*)
+      1    0.0%    0.0%  v8::internal::HDeadCodeEliminationPhase::MarkLive(v8::internal::HValue*, v8::internal::ZoneList<v8::internal::HValue*>*)
+      1    0.0%    0.0%  v8::internal::HConstant::HConstant(v8::internal::Handle<v8::internal::Object>, v8::internal::Representation)
+      1    0.0%    0.0%  v8::internal::HCheckTable::Process(v8::internal::HInstruction*, v8::internal::Zone*)
+      1    0.0%    0.0%  v8::internal::HCheckMaps::HCheckMaps(v8::internal::HValue*, v8::internal::UniqueSet<v8::internal::Map> const*, v8::internal::HValue*)
+      1    0.0%    0.0%  v8::internal::HBasicBlock::RegisterPredecessor(v8::internal::HBasicBlock*)
+      1    0.0%    0.0%  v8::internal::HAliasAnalyzer::Query(v8::internal::HValue*, v8::internal::HValue*)
+      1    0.0%    0.0%  v8::internal::GCTracer::Stop(v8::internal::GarbageCollector)
+      1    0.0%    0.0%  v8::internal::GCTracer::Scope::~Scope()
+      1    0.0%    0.0%  v8::internal::GCTracer::ScavengeSpeedInBytesPerMillisecond(v8::internal::ScavengeSpeedMode) const
+      1    0.0%    0.0%  v8::internal::GCTracer::Print() const
+      1    0.0%    0.0%  v8::internal::GCTracer::CombinedMarkCompactSpeedInBytesPerMillisecond()
+      1    0.0%    0.0%  v8::internal::GCTracer::AverageSurvivalRatio() const
+      1    0.0%    0.0%  v8::internal::GCTracer::AddSurvivalRatio(double)
+      1    0.0%    0.0%  v8::internal::FuncNameInferrer::FuncNameInferrer(v8::internal::AstValueFactory*, v8::internal::Zone*)
+      1    0.0%    0.0%  v8::internal::FullCodeGenerator::VisitUnaryOperation(v8::internal::UnaryOperation*)
+      1    0.0%    0.0%  v8::internal::FullCodeGenerator::VisitForAccumulatorValue(v8::internal::Expression*)
+      1    0.0%    0.0%  v8::internal::FeedbackNexus::ExtractMaps(v8::internal::List<v8::internal::Handle<v8::internal::Map>, v8::internal::FreeStoreAllocationPolicy>*) const
+      1    0.0%    0.0%  v8::internal::Factory::NewSharedFunctionInfo(v8::internal::Handle<v8::internal::String>, v8::internal::MaybeHandle<v8::internal::Code>, bool)
+      1    0.0%    0.0%  v8::internal::ExpressionStatement::IsJump() const
+      1    0.0%    0.0%  v8::internal::EffectsMixin<int, v8::internal::NestedEffectsBase<int, -2147483648>, v8::internal::Effects<int, -2147483648> >::Seq(int, v8::internal::Effect)
+      1    0.0%    0.0%  v8::internal::DuplicateFinder::BackupKey(v8::internal::Vector<unsigned char const>, bool)
+      1    0.0%    0.0%  v8::internal::DiyFp::Multiply(v8::internal::DiyFp const&)
+      1    0.0%    0.0%  v8::internal::Dictionary<v8::internal::UnseededNumberDictionary, v8::internal::UnseededNumberDictionaryShape, unsigned int>::AtPut(v8::internal::Handle<v8::internal::UnseededNumberDictionary>, unsigned int, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Dictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape, v8::internal::Handle<v8::internal::Name> >::AddEntry(v8::internal::Handle<v8::internal::NameDictionary>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyDetails, unsigned int)
+      1    0.0%    0.0%  v8::internal::CompilationCache::Iterate(v8::internal::ObjectVisitor*)
+      1    0.0%    0.0%  v8::internal::CodeStub::FindCodeInCache(v8::internal::Code**)
+      1    0.0%    0.0%  v8::internal::CodeFlusher::IteratePointersToFromSpace(v8::internal::ObjectVisitor*)
+      1    0.0%    0.0%  v8::internal::Builtins::InterpreterEntryTrampoline()
+      1    0.0%    0.0%  v8::internal::Builtin_ArrayPop(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::BitVector::Iterator::Advance()
+      1    0.0%    0.0%  v8::internal::AstValueFactory::GetOneByteStringInternal(v8::internal::Vector<unsigned char const>)
+      1    0.0%    0.0%  v8::internal::AstTyper::VisitIfStatement(v8::internal::IfStatement*)
+      1    0.0%    0.0%  v8::internal::AstTyper::VisitAssignment(v8::internal::Assignment*)
+      1    0.0%    0.0%  v8::internal::AstRawString::AsArrayIndex(unsigned int*) const
+      1    0.0%    0.0%  v8::internal::AstNumberingVisitor::VisitProperty(v8::internal::Property*)
+      1    0.0%    0.0%  v8::internal::AstNumberingVisitor::VisitBinaryOperation(v8::internal::BinaryOperation*)
+      1    0.0%    0.0%  v8::internal::AssemblerPositionsRecorder::RecordPosition(int)
+      1    0.0%    0.0%  v8::internal::Assembler::immediate_arithmetic_op(unsigned char, v8::internal::Register, v8::internal::Immediate, int)
+      1    0.0%    0.0%  v8::internal::Assembler::RecordRelocInfo(v8::internal::RelocInfo::Mode, long)
+      1    0.0%    0.0%  v8::internal::ArrayLiteral::node_type() const
+      1    0.0%    0.0%  v8::internal::ArrayBufferTracker::PrepareDiscoveryInNewSpace()
+      1    0.0%    0.0%  v8::internal::Accessors::IsJSObjectFieldAccessor(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::Name>, int*)
+      1    0.0%    0.0%  v8::internal::Accessors::ArrayLengthGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, bool, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::(anonymous namespace)::ElementsAccessorBase<v8::internal::(anonymous namespace)::FastPackedSmiElementsAccessor, v8::internal::(anonymous namespace)::ElementsKindTraits<(v8::internal::ElementsKind)0> >::GetEntryForIndex(v8::internal::JSObject*, v8::internal::FixedArrayBase*, unsigned int)
+      1    0.0%    0.0%  v8::Value::ToString(v8::Isolate*) const
+      1    0.0%    0.0%  v8::HandleScope::~HandleScope()
+      1    0.0%    0.0%  std::ios_base::Init::~Init()
+      1    0.0%    0.0%  node::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>)
+      1    0.0%    0.0%  node::InternalModuleReadFile(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  bool v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::PromoteObject<(v8::internal::ScavengingVisitor<(v8::internal::MarksHandling)1, (v8::internal::LoggingAndProfiling)0>::ObjectContents)0, (v8::internal::AllocationAlignment)0>(v8::internal::Map*, v8::internal::HeapObject**, v8::internal::HeapObject*, int)
+      1    0.0%    0.0%  _vm_region_recurse_64
+      1    0.0%    0.0%  _vdprintf
+      1    0.0%    0.0%  _tmpnam
+      1    0.0%    0.0%  _szone_pressure_relief
+      1    0.0%    0.0%  _scanf_l
+      1    0.0%    0.0%  _scanf
+      1    0.0%    0.0%  _insert_node
+      1    0.0%    0.0%  _create_scalable_szone
+      1    0.0%    0.0%  __vdprintf
+      1    0.0%    0.0%  __swrite
+      1    0.0%    0.0%  ___vfwscanf
+      1    0.0%    0.0%  ___sinit
+      1    0.0%    0.0%  ___rec_search
+      1    0.0%    0.0%  ___rec_iput
+      1    0.0%    0.0%  ___exp10f
+      1    0.0%    0.0%  ___collate_equiv_value
+      1    0.0%    0.0%  _SHA256_Final
+
+ [Summary]:
+   ticks  total  nonlib   name
+  27955   77.7%   80.0%  JavaScript
+   5421   15.1%   15.5%  C++
+    409    1.1%    1.2%  GC
+   1023    2.8%          Shared libraries
+   1579    4.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+   3183   59.7%    8.8%  v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+    945   17.7%    2.6%  v8::internal::Runtime_Interrupt(int, v8::internal::Object**, v8::internal::Isolate*)
+    352    6.6%    1.0%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+    147    2.8%    0.4%  v8::internal::Runtime_StringToLowerCase(int, v8::internal::Object**, v8::internal::Isolate*)
+     96    1.8%    0.3%  v8::internal::Runtime_NumberToStringSkipCache(int, v8::internal::Object**, v8::internal::Isolate*)
+     81    1.5%    0.2%  v8::internal::Runtime_CompileOptimized_Concurrent(int, v8::internal::Object**, v8::internal::Isolate*)
+     67    1.3%    0.2%  sha256_block_data_order_avx2
+     60    1.1%    0.2%  v8::internal::Runtime_StackGuard(int, v8::internal::Object**, v8::internal::Isolate*)
+     50    0.9%    0.1%  v8::internal::Runtime_KeyedGetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     41    0.8%    0.1%  v8::internal::Runtime_Multiply(int, v8::internal::Object**, v8::internal::Isolate*)
+     31    0.6%    0.1%  _szone_malloc_should_clear
+     23    0.4%    0.1%  node::StringBytes::Encode(v8::Isolate*, char const*, unsigned long, node::encoding)
+     18    0.3%    0.1%  v8::internal::Runtime_AllocateInTargetSpace(int, v8::internal::Object**, v8::internal::Isolate*)
+     15    0.3%    0.0%  v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     15    0.3%    0.0%  node::ParseEncoding(char const*, node::encoding)
+     12    0.2%    0.0%  v8::internal::Runtime_SetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     11    0.2%    0.0%  _update_cache_for_file_streams
+     10    0.2%    0.0%  v8::Value::IsUint8Array() const
+      9    0.2%    0.0%  void v8::Utf8WriterVisitor::Visit<unsigned char>(unsigned char const*, int)
+      9    0.2%    0.0%  v8::internal::modulo(double, double)
+      9    0.2%    0.0%  v8::internal::Runtime_AllocateHeapNumber(int, v8::internal::Object**, v8::internal::Isolate*)
+      9    0.2%    0.0%  v8::internal::Factory::NewStringFromOneByte(v8::internal::Vector<unsigned char const>, v8::internal::PretenureFlag)
+      7    0.1%    0.0%  v8::String::WriteUtf8(char*, int, int*, int) const
+      7    0.1%    0.0%  _OPENSSL_cleanse
+      6    0.1%    0.0%  v8::internal::Runtime_SameValueZero(int, v8::internal::Object**, v8::internal::Isolate*)
+      6    0.1%    0.0%  v8::internal::Runtime_LoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.1%    0.0%  v8::internal::Runtime_TryInstallOptimizedCode(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.1%    0.0%  v8::Value::IsExternal() const
+      5    0.1%    0.0%  node::crypto::Hash::HashDigest(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.1%    0.0%  node::StringBytes::StorageSize(v8::Isolate*, v8::Local<v8::Value>, node::encoding)
+      5    0.1%    0.0%  _sha256_block_data_order
+      5    0.1%    0.0%  __malloc_initialize
+      4    0.1%    0.0%  v8::internal::Runtime_KeyedStoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.1%    0.0%  v8::internal::Runtime_BinaryOpIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.1%    0.0%  v8::internal::Heap::AllocateRaw(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+      4    0.1%    0.0%  node::crypto::Hash::HashUpdate(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.1%    0.0%  node::ParseEncoding(v8::Isolate*, v8::Local<v8::Value>, node::encoding)
+      4    0.1%    0.0%  _free
+      3    0.1%    0.0%  v8::internal::Runtime_StoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.1%    0.0%  v8::internal::ConsString* v8::internal::String::VisitFlat<v8::Utf8WriterVisitor>(v8::Utf8WriterVisitor*, v8::internal::String*, int)
+      3    0.1%    0.0%  v8::String::IsExternalOneByte() const
+      3    0.1%    0.0%  node::MaybeStackBuffer<char, 1024ul>::AllocateSufficientStorage(unsigned long)
+      3    0.1%    0.0%  _SHA256_Update
+      2    0.0%    0.0%  v8::internal::ThreadId::GetCurrentThreadId()
+      2    0.0%    0.0%  v8::internal::Runtime_SetCode(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.0%  v8::internal::Runtime_ObjectDefineProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.0%  v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.0%  v8::Value::ToString(v8::Local<v8::Context>) const
+      2    0.0%    0.0%  v8::String::NewFromOneByte(v8::Isolate*, unsigned char const*, v8::NewStringType, int)
+      2    0.0%    0.0%  v8::HandleScope::Initialize(v8::Isolate*)
+      2    0.0%    0.0%  v8::External::Value() const
+      2    0.0%    0.0%  v8::EscapableHandleScope::Escape(v8::internal::Object**)
+      2    0.0%    0.0%  v8::EscapableHandleScope::EscapableHandleScope(v8::Isolate*)
+      2    0.0%    0.0%  node::StringBytes::GetExternalParts(v8::Isolate*, v8::Local<v8::Value>, char const**, unsigned long*)
+      2    0.0%    0.0%  _free_small
+      2    0.0%    0.0%  ___mach_stack_logging_enumerate_records
+      2    0.0%    0.0%  _EVP_MD_CTX_cleanup
+      2    0.0%    0.0%  _EVP_DigestFinal_ex
+      2    0.0%    0.0%  _CRYPTO_free
+      1    0.0%    0.0%  v8::internal::Runtime_SetPrototype(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_NotifyStubFailure(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_KeyedLoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_CreateObjectLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Builtin_ArraySlice(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Builtin_ArrayPop(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::Value::ToString(v8::Isolate*) const
+      1    0.0%    0.0%  v8::HandleScope::~HandleScope()
+      1    0.0%    0.0%  node::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>)
+      1    0.0%    0.0%  _small_free_list_remove_ptr_no_clear
+      1    0.0%    0.0%  __os_nospin_lock_unlock_slow
+      1    0.0%    0.0%  __os_nospin_lock_lock_slow
+      1    0.0%    0.0%  _SHA256_Final
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 2.0% are not shown.
+
+   ticks parent  name
+   2577    7.2%  LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+   2577  100.0%    LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+   1373   53.3%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+   1373  100.0%        LazyCompile: ~Module._compile module.js:510:37
+   1373  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+   1373  100.0%            LazyCompile: ~Module.load module.js:478:33
+    986   38.3%      LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    986  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    986  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    986  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    195    7.6%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    195  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    195  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    195  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+
+   2544    7.1%  Stub: LoadICTrampolineStub
+   1366   53.7%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1366  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    756   55.3%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    756  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    756  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    481   35.2%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    481  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    481  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    118    8.6%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    118  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    118  100.0%            LazyCompile: ~Module._compile module.js:510:37
+   1029   40.4%    LazyCompile: ~truncate /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:71:22
+    664   64.5%      LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+    664  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    363   54.7%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    363  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    244   36.7%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    244  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     54    8.1%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     54  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    302   29.3%      LazyCompile: *Integer /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:10:21
+    302  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    181   59.9%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    181  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    100   33.1%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    100  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     20    6.6%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     20  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     29    2.8%      LazyCompile: *parseStringValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1145:30
+     19   65.5%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     19  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     19  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      8   27.6%        LazyCompile: *parseValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1192:24
+      8  100.0%          LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      4   50.0%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+      3   37.5%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1   12.5%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      2    6.9%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      2  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      2  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     76    3.0%    LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+     41   53.9%      LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     29   70.7%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     29  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     29  100.0%            LazyCompile: ~Module._compile module.js:510:37
+      8   19.5%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      8  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      8  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      4    9.8%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      4  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      4  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     31   40.8%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     31  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     31  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     31  100.0%            LazyCompile: ~Module.load module.js:478:33
+      4    5.3%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      4  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      4  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      4  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     59    2.3%    LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     36   61.0%      LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     36  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     36  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     36  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     16   27.1%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     16  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     16  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     16  100.0%            LazyCompile: ~Module.load module.js:478:33
+      6   10.2%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      6  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      6  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      6  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+
+   1869    5.2%  v8::internal::Accessors::ArrayLengthSetter(v8::Local<v8::Name>, v8::Local<v8::Value>, v8::PropertyCallbackInfo<void> const&)
+   1869  100.0%    v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+    567   30.3%      LazyCompile: *SmallInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:396:46
+    567  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    567  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    277   48.9%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    226   39.9%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     60   10.6%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    467   25.0%      LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+    467  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    248   53.1%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    248  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    184   39.4%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    184  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     34    7.3%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     34  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    272   14.6%      LazyCompile: *BigInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:392:44
+    272  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    272  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    144   52.9%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    101   37.1%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     27    9.9%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    233   12.5%      LazyCompile: *BigInteger._multiplyBySmall /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:362:54
+    233  100.0%        LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+    233  100.0%          LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    233  100.0%            LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    230   12.3%      LazyCompile: *BigInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:328:46
+    230  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    230  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    117   50.9%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     86   37.4%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     25   10.9%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    100    5.4%      LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+     88   88.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+     88  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     39   44.3%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     39   44.3%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     10   11.4%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     12   12.0%        LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+     11   91.7%          LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      7   63.6%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+      3   27.3%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1    9.1%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      1    8.3%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
+   1825    5.1%  LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1825  100.0%    LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+   1027   56.3%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+   1027  100.0%        LazyCompile: ~Module._compile module.js:510:37
+   1027  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+   1027  100.0%            LazyCompile: ~Module.load module.js:478:33
+    641   35.1%      LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    641  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    641  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    641  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    145    7.9%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    145  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    145  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    145  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+
+   1668    4.6%  LazyCompile: *SmallInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:396:46
+   1668  100.0%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1668  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    903   54.1%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    903  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    903  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    612   36.7%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    612  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    612  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    139    8.3%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    139  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    139  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
+   1579    4.4%  UNKNOWN
+     92    5.8%    Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     92  100.0%      LazyCompile: ~Module._compile module.js:510:37
+     92  100.0%        LazyCompile: ~Module._extensions..js module.js:577:37
+     92  100.0%          LazyCompile: ~Module.load module.js:478:33
+     92  100.0%            LazyCompile: tryModuleLoad module.js:443:23
+
+   1564    4.3%  LazyCompile: *BigInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:328:46
+   1252   80.1%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1252  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    683   54.6%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    683  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    683  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    460   36.7%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    460  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    460  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    103    8.2%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    103  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    103  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    312   19.9%    LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+    152   48.7%      LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     98   64.5%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     98  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     98  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     41   27.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     41  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     41  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     10    6.6%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     10  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     10  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    140   44.9%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    140  100.0%        LazyCompile: ~Module._compile module.js:510:37
+    140  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+    140  100.0%            LazyCompile: ~Module.load module.js:478:33
+     13    4.2%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     13  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     13  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     13  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      7    2.2%      LazyCompile: *parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      7  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      7  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      7  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+
+   1513    4.2%  LazyCompile: *BigInteger._multiplyBySmall /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:362:54
+   1513  100.0%    LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+   1124   74.3%      LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+   1124  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    629   56.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    629  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    384   34.2%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    384  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    101    9.0%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    101  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    256   16.9%      LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+    140   54.7%        LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     92   65.7%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     92  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     35   25.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     35  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     10    7.1%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     10  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    107   41.8%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    107  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    107  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      7    2.7%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      7  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      7  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    133    8.8%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     68   51.1%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     68  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     68  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     53   39.8%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     53  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     53  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     12    9.0%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     12  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     12  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
+   1140    3.2%  LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    613   53.8%    Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    613  100.0%      LazyCompile: ~Module._compile module.js:510:37
+    613  100.0%        LazyCompile: ~Module._extensions..js module.js:577:37
+    613  100.0%          LazyCompile: ~Module.load module.js:478:33
+    613  100.0%            LazyCompile: tryModuleLoad module.js:443:23
+    415   36.4%    LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    415  100.0%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    415  100.0%        LazyCompile: ~Module._compile module.js:510:37
+    415  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+    415  100.0%            LazyCompile: ~Module.load module.js:478:33
+    103    9.0%    LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    103  100.0%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    103  100.0%        LazyCompile: ~Module._compile module.js:510:37
+    103  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+    103  100.0%            LazyCompile: ~Module.load module.js:478:33
+
+   1103    3.1%  LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+    864   78.3%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    864  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    436   50.5%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    436  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    436  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    340   39.4%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    340  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    340  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     79    9.1%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     79  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     79  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    164   14.9%    LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     97   59.1%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     97  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     97  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     97  100.0%            LazyCompile: ~Module.load module.js:478:33
+     55   33.5%      LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     55  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     55  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     55  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     11    6.7%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     11  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     11  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     11  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     75    6.8%    LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+     41   54.7%      LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     26   63.4%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     26  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     26  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     13   31.7%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     13  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     13  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      1    2.4%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      1  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1  100.0%            LazyCompile: ~Module._compile module.js:510:37
+      1    2.4%        LazyCompile: *Integer /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:10:21
+      1  100.0%          LazyCompile: ~kv /Users/tashworth/work/hodges-filter/hodges.js:46:7
+      1  100.0%            LazyCompile: ~add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     28   37.3%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     28  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     28  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     28  100.0%            LazyCompile: ~Module.load module.js:478:33
+      6    8.0%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      6  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      6  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      6  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+
+   1023    2.8%  LazyCompile: ~truncate /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:71:22
+    761   74.4%    LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+    760   99.9%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    426   56.1%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    426  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    426  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    261   34.3%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    261  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    261  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     65    8.6%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     65  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     65  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    228   22.3%    LazyCompile: *Integer /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:10:21
+    228  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    130   57.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    130  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    130  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     78   34.2%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     78  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     78  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     16    7.0%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     16  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     16  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
+    983    2.7%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+    516   52.5%    LazyCompile: ~truncate /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:71:22
+    341   66.1%      LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+    341  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    180   52.8%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    180  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    133   39.0%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    133  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     25    7.3%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     25  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    138   26.7%      LazyCompile: *Integer /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:10:21
+    138  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     71   51.4%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     71  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     55   39.9%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     55  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     12    8.7%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     12  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     15    2.9%      LazyCompile: *parseStringValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1145:30
+      8   53.3%        LazyCompile: *parseValue /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1192:24
+      8  100.0%          LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      4   50.0%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+      3   37.5%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1   12.5%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      7   46.7%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      7  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      7  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    359   36.5%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    359  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    205   57.1%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    205  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    205  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    123   34.3%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    123  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    123  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     29    8.1%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     29  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     29  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     64    6.5%    LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+     42   65.6%      LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     42  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     42  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     42  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     10   15.6%      LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     10  100.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     10  100.0%          LazyCompile: ~Module._compile module.js:510:37
+     10  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+     10   15.6%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     10  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     10  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     10  100.0%            LazyCompile: ~Module.load module.js:478:33
+     28    2.8%    LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+     17   60.7%      Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     17  100.0%        LazyCompile: ~Module._compile module.js:510:37
+     17  100.0%          LazyCompile: ~Module._extensions..js module.js:577:37
+     17  100.0%            LazyCompile: ~Module.load module.js:478:33
+     11   39.3%      LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      8   72.7%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+      8  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      8  100.0%            LazyCompile: ~Module._compile module.js:510:37
+      2   18.2%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      2  100.0%          LazyCompile: ~Module._compile module.js:510:37
+      2  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+      1    9.1%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      1  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      1  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
+    961    2.7%  v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+    924   96.1%    v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+    321   34.7%      LazyCompile: *divModAny /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:509:23
+    321  100.0%        LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    171   53.3%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    171  100.0%            LazyCompile: ~Module._compile module.js:510:37
+    125   38.9%          LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    125  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     24    7.5%          LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     24  100.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    235   25.4%      LazyCompile: *SmallInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:396:46
+    235  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    235  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    116   49.4%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     95   40.4%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     22    9.4%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    125   13.5%      LazyCompile: *BigInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:392:44
+    125  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    125  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     66   52.8%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     43   34.4%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     13   10.4%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    100   10.8%      LazyCompile: *BigInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:328:46
+    100  100.0%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    100  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     51   51.0%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     37   37.0%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     11   11.0%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+    100   10.8%      LazyCompile: *BigInteger._multiplyBySmall /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:362:54
+    100  100.0%        LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+    100  100.0%          LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    100  100.0%            LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     43    4.7%      LazyCompile: *SmallInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:368:48
+     38   88.4%        LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+     38  100.0%          LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     31   81.6%            Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      5   13.2%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+      1    2.6%            LazyCompile: ~BigInteger.and /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:957:41
+      1    2.6%            LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+      5   11.6%        LazyCompile: ~parseBaseFromArray /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1065:32
+      4   80.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+      4  100.0%            LazyCompile: ~Module._compile module.js:510:37
+      1   20.0%          LazyCompile: ~parseBase /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:1039:30
+      1  100.0%            LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+     37    3.9%    LazyCompile: *BigInteger._multiplyBySmall /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:362:54
+     37  100.0%      v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     19   51.4%        LazyCompile: *BigInteger.multiply /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:328:46
+     19  100.0%          LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+     19  100.0%            LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+     18   48.6%        LazyCompile: *SmallInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:396:46
+     18  100.0%          LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+     18  100.0%            LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+
+    900    2.5%  LazyCompile: *BigInteger.square /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:392:44
+    900  100.0%    LazyCompile: ~BigInteger.pow /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:580:41
+    900  100.0%      LazyCompile: *bitwise /Users/tashworth/work/hodges-filter/node_modules/big-integer/BigInteger.js:918:21
+    513   57.0%        Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    513  100.0%          LazyCompile: ~Module._compile module.js:510:37
+    513  100.0%            LazyCompile: ~Module._extensions..js module.js:577:37
+    301   33.4%        LazyCompile: *contains /Users/tashworth/work/hodges-filter/hodges.js:41:13
+    301  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+    301  100.0%            LazyCompile: ~Module._compile module.js:510:37
+     75    8.3%        LazyCompile: *add /Users/tashworth/work/hodges-filter/hodges.js:36:8
+     75  100.0%          Function: <anonymous> /Users/tashworth/work/hodges-filter/hodges.js:1:11
+     75  100.0%            LazyCompile: ~Module._compile module.js:510:37
+
