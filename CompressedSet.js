@@ -1,5 +1,5 @@
-const MurmurHash3 = require('imurmurhash');
-const URLSafeBase64 = require('urlsafe-base64');
+const MurmurHash3 = require("imurmurhash");
+const URLSafeBase64 = require("urlsafe-base64");
 
 /**
  * The CompressedSet is a lossy, compressed set data structure inspired by Jeff Hodges'
@@ -23,104 +23,109 @@ const URLSafeBase64 = require('urlsafe-base64');
  */
 
 const Base64 = {
-    encode: s => URLSafeBase64.encode(Buffer.from(s, 'utf8')),
-    decode: s => URLSafeBase64.decode(s).toString('ascii')
+  encode: s => URLSafeBase64.encode(Buffer.from(s, "utf8")),
+  decode: s => URLSafeBase64.decode(s).toString("ascii")
 };
 
 class CompressedSet {
-    constructor(buffer) {
-        const bufferByteLength = (
-            CompressedSet.NUM_VALUES_BYTES +
-            CompressedSet.BYTES_PER_VALUE_BYTES +
-            (CompressedSet.DEFAULT_NUM_VALUES * CompressedSet.DEFAULT_BYTES_PER_VALUE)
+  constructor(buffer) {
+    const bufferByteLength =
+      CompressedSet.NUM_VALUES_BYTES +
+      CompressedSet.BYTES_PER_VALUE_BYTES +
+      CompressedSet.DEFAULT_NUM_VALUES * CompressedSet.DEFAULT_BYTES_PER_VALUE;
+
+    if (buffer) {
+      if (!(buffer instanceof ArrayBuffer)) {
+        throw new TypeError(
+          "First argument to CompressedSet constructor must be an ArrayBuffer"
         );
+      }
 
-        if (buffer) {
-            if (!(buffer instanceof ArrayBuffer)) {
-                throw new TypeError('First argument to CompressedSet constructor must be an ArrayBuffer');
-            }
-
-            if (buffer.byteLength !== bufferByteLength) {
-                throw new TypeError(`ArrayBuffer argument to CompressedSet constructor must have byteLength of ${bufferByteLength}`);
-            }
-        }
-
-        this.buffer = buffer || new ArrayBuffer(bufferByteLength);
-        this.numValuesView = new DataView(
-            this.buffer,
-            0,
-            CompressedSet.NUM_VALUES_BYTES
+      if (buffer.byteLength !== bufferByteLength) {
+        throw new TypeError(
+          `ArrayBuffer argument to CompressedSet constructor must have byteLength of ${bufferByteLength}`
         );
-        this.bytesPerValueView = new DataView(
-            this.buffer,
-            CompressedSet.NUM_VALUES_BYTES,
-            CompressedSet.BYTES_PER_VALUE_BYTES
-        );
-        this.valuesView = new DataView(
-            this.buffer,
-            CompressedSet.NUM_VALUES_BYTES + CompressedSet.BYTES_PER_VALUE_BYTES
-        );
-
-        if (!buffer) {
-            this.numValuesView.setUint16(0, CompressedSet.DEFAULT_NUM_VALUES);
-        }
-        if (!buffer) {
-            this.bytesPerValueView.setUint8(0, CompressedSet.DEFAULT_BYTES_PER_VALUE);
-        }
-
-        this.indexMask = this.numValues - 1;
-        this.valueMask = Math.pow(2, this.bytesPerValue * 8) - 1;
+      }
     }
 
-    get numValues() {
-        return this.numValuesView.getUint16(0);
+    this.buffer = buffer || new ArrayBuffer(bufferByteLength);
+    this.numValuesView = new DataView(
+      this.buffer,
+      0,
+      CompressedSet.NUM_VALUES_BYTES
+    );
+    this.bytesPerValueView = new DataView(
+      this.buffer,
+      CompressedSet.NUM_VALUES_BYTES,
+      CompressedSet.BYTES_PER_VALUE_BYTES
+    );
+    this.valuesView = new DataView(
+      this.buffer,
+      CompressedSet.NUM_VALUES_BYTES + CompressedSet.BYTES_PER_VALUE_BYTES
+    );
+
+    if (!buffer) {
+      this.numValuesView.setUint16(0, CompressedSet.DEFAULT_NUM_VALUES);
+    }
+    if (!buffer) {
+      this.bytesPerValueView.setUint8(0, CompressedSet.DEFAULT_BYTES_PER_VALUE);
     }
 
-    get bytesPerValue() {
-        return this.bytesPerValueView.getUint8(0);
+    this.indexMask = this.numValues - 1;
+    this.valueMask = Math.pow(2, this.bytesPerValue * 8) - 1;
+  }
+
+  get numValues() {
+    return this.numValuesView.getUint16(0);
+  }
+
+  get bytesPerValue() {
+    return this.bytesPerValueView.getUint8(0);
+  }
+
+  toString() {
+    return this.encode();
+  }
+
+  add(entry) {
+    const { k, v } = this._kv(entry);
+
+    this._vs(v).forEach((vByte, i) => {
+      this.valuesView.setUint8(k + i, vByte);
+    });
+
+    return this;
+  }
+
+  contains(entry) {
+    const { k, v } = this._kv(entry);
+    const vs = this._vs(v);
+
+    return this._vs(v).every(
+      (vByte, i) => this.valuesView.getUint8(k + i) === vByte
+    );
+  }
+
+  _kv(entry) {
+    const hash = CompressedSet.hash(entry);
+    const k = (hash & this.indexMask) * this.bytesPerValue;
+    const v = CompressedSet.hash(hash.toString(16)) & this.valueMask;
+    return { k, v };
+  }
+
+  _vs(v) {
+    const mask = Math.pow(2, 8) - 1;
+    const vs = Array.from({ length: this.bytesPerValue });
+    for (let i = 0; i < this.bytesPerValue; i++) {
+      const shift = this.bytesPerValue - i - 1;
+      vs[i] = (v >> (shift * 8)) & mask;
     }
+    return vs;
+  }
 
-    toString() {
-        return this.encode();
-    }
-
-    add(entry) {
-        const { k, v } = this._kv(entry);
-
-        this._vs(v).forEach((vByte, i) => {
-            this.valuesView.setUint8(k + i, vByte);
-        });
-
-        return this;
-    }
-
-    contains(entry) {
-        const { k, v } = this._kv(entry);
-        const vs = this._vs(v);
-
-        return this._vs(v).every((vByte, i) =>  this.valuesView.getUint8(k + i) === vByte);
-    }
-
-    _kv(entry) {
-        const hash = CompressedSet.hash(entry);
-        const k = (hash & this.indexMask) * this.bytesPerValue;
-        const v = CompressedSet.hash(hash.toString(16)) & this.valueMask;
-        return { k, v };
-    }
-
-    _vs(v) {
-        const mask = Math.pow(2, 8) - 1;
-        const vs = Array.from({ length: this.bytesPerValue });
-        for (let i = 0; i < this.bytesPerValue; i++) {
-            const shift = this.bytesPerValue - i - 1;
-            vs[i] = (v >> (shift * 8)) & mask;
-        }
-        return vs;
-    }
-
-    encode() {
-        return Base64.encode(Buffer.from(this.buffer).toString('hex'));
-    }
+  encode() {
+    return Base64.encode(Buffer.from(this.buffer).toString("hex"));
+  }
 }
 
 CompressedSet.NUM_VALUES_BYTES = 2;
@@ -129,19 +134,19 @@ CompressedSet.DEFAULT_NUM_VALUES = 256;
 CompressedSet.DEFAULT_BYTES_PER_VALUE = 3;
 
 CompressedSet.decode = function decode(encodedDigest) {
-    const digest = Base64.decode(encodedDigest);
-    const byteLength = digest.length / 2;
-    const arrayBuf = new ArrayBuffer(byteLength);
-    const view = new DataView(arrayBuf);
-    for (let i = 0; i < byteLength; i += 2) {
-        const chars = digest[i] + digest[i + 1];
-        view.setUint8(i, parseInt(chars, 16));
-    }
-    return new CompressedSet(arrayBuf);
+  const digest = Base64.decode(encodedDigest);
+  const byteLength = digest.length / 2;
+  const arrayBuf = new ArrayBuffer(byteLength);
+  const view = new DataView(arrayBuf);
+  for (let i = 0; i < byteLength; i += 2) {
+    const chars = digest[i] + digest[i + 1];
+    view.setUint8(i, parseInt(chars, 16));
+  }
+  return new CompressedSet(arrayBuf);
 };
 
-CompressedSet.hash = function (v) {
-    return MurmurHash3(v).result();
+CompressedSet.hash = function(v) {
+  return MurmurHash3(v).result();
 };
 
 module.exports = CompressedSet;
