@@ -54,11 +54,3 @@ results.forEach(([s, v, size, f_n, f_p]) => {
 });
 
 
-const h1 = new CompressedSet();
-h1.add('a');
-console.log(h1.encode());
-console.log(CompressedSet.decode(h1.encode()));
-const h2 = new CompressedSet();
-h2.add('test');
-console.log(CompressedSet.decode(h2.encode()).contains('test') === true);
-console.log(CompressedSet.decode(CompressedSet.decode(h2.encode()).encode()).contains('test') === true);
