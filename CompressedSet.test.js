@@ -24,6 +24,29 @@ describe('basic operation', () => {
             expect(set.contains(v)).toBe(true);
         });
     });
+
+   test('it can be initialized with an ArrayBuffer', () => {
+      const set = new CompressedSet();
+      set.add('a');
+      const copy = new CompressedSet(set.buffer);
+      expect(copy.contains('a')).toBe(true);
+   });
+
+   test('it throws when initialized with something other than an ArrayBuffer', () => {
+      expect(() => new CompressedSet([])).toThrow();
+      expect(() => new CompressedSet({})).toThrow();
+      expect(() => new CompressedSet(true)).toThrow();
+      expect(() => new CompressedSet("bacon")).toThrow();
+   });
+
+   test('it throws a relevant error message when initialized with a non-ArrayBuffer', () => {
+      expect(() => new CompressedSet([])).toThrow('First argument to CompressedSet constructor must be an ArrayBuffer');
+   });
+
+   test('it throws a relevant error message if ArrayBuffer is the wrong length', () => {
+      const buf = new ArrayBuffer(4);
+      expect(() => new CompressedSet(buf)).toThrow('ArrayBuffer argument to CompressedSet constructor must have byteLength of 771');
+   });
 });
 
 describe('encode + decode', () => {

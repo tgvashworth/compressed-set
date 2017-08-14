@@ -29,11 +29,23 @@ const Base64 = {
 
 class CompressedSet {
     constructor(buffer) {
-        this.buffer = buffer || new ArrayBuffer(
+        const bufferByteLength = (
             CompressedSet.NUM_VALUES_BYTES +
             CompressedSet.BYTES_PER_VALUE_BYTES +
             (CompressedSet.DEFAULT_NUM_VALUES * CompressedSet.DEFAULT_BYTES_PER_VALUE)
         );
+
+        if (buffer) {
+            if (!(buffer instanceof ArrayBuffer)) {
+                throw new TypeError('First argument to CompressedSet constructor must be an ArrayBuffer');
+            }
+
+            if (buffer.byteLength !== bufferByteLength) {
+                throw new TypeError(`ArrayBuffer argument to CompressedSet constructor must have byteLength of ${bufferByteLength}`);
+            }
+        }
+
+        this.buffer = buffer || new ArrayBuffer(bufferByteLength);
         this.numValuesView = new DataView(
             this.buffer,
             0,
