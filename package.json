@@ -15,6 +15,6 @@
     "prettier": "^1.5.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "prettier --write \"**/*.js\" && jest"
   }
 }
