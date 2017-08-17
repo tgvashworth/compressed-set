@@ -19,8 +19,8 @@ It is encoded as a URL-safe base64 encoded hexidecimal string in the following f
 
     [ 2 bytes (M) ][ 1 byte (N) ][ M * N bytes ]
 
-Experimental testing of this data structure, M=256 and N=3 (771 bytes total), was given an input set of 200 randomly generated IDs.
+A test configuration, M=256 and N=3 (771 bytes total), was given an input set of 200 randomly generated IDs (3k when concatenated).
 
-When queried with a random 100 ID subset of the input set, it gave 23 false-negatives, which is a 77% true-positive (hit) rate.
+When queried with a random 100 ID subset of the input set it gave 23 false-negatives, which is a 77% true-positive (hit) rate.
 
 When queried with 20,000 random IDs not in the input set, it returned 0 false-positives which is a 100% true-negative rate.
