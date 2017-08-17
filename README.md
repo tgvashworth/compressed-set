@@ -2,7 +2,7 @@
 
 *Note:* this is experimental and not ready for production or used anywhere.
 
-The CompressedSet is a lossy, compressed set data structure inspired by Jeff Hodges' ["The Opposite of a Bloom Filter" article][https://www.somethingsimilar.com/2012/05/21/the-opposite-of-a-bloom-filter/]
+The CompressedSet is a lossy, compressed set data structure inspired by Jeff Hodges' ["The Opposite of a Bloom Filter" article](https://www.somethingsimilar.com/2012/05/21/the-opposite-of-a-bloom-filter/)
 
 The idea is that it's useful to have a compressed, probabilistic set data structure that can answer "probably not in set" with a high degree of confidence (very few false positives) and "probably in set" with a medium degree of confidence (some false negatives).
 
