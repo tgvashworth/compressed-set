@@ -4,7 +4,7 @@ const leftPad = require("left-pad");
 
 const CompressedSet = require("./CompressedSet");
 
-const source_ids = Array.from({ length: 20000 }).map(() =>
+const source_ids = Array.from({ length: 20200 }).map(() =>
   bigInt.randBetween("0", "12345678987654321").toString()
 );
 
