@@ -88,6 +88,7 @@ class CompressedSet {
   }
 
   add(entry) {
+    this._check(entry);
     const { k, v } = this._kv(entry);
 
     this._vs(v).forEach((vByte, i) => {
@@ -98,6 +99,7 @@ class CompressedSet {
   }
 
   remove(entry) {
+    this._check(entry);
     if (this.contains(entry)) {
       const { k, v } = this._kv(entry);
       this._vs(v).forEach((vByte, i) => {
@@ -109,11 +111,18 @@ class CompressedSet {
   }
 
   contains(entry) {
+    this._check(entry);
     const { k, v } = this._kv(entry);
 
     return this._vs(v).every(
       (vByte, i) => this.valuesView.getUint8(k + i) === vByte
     );
+  }
+
+  _check(entry) {
+    if (typeof entry !== "string") {
+      throw new TypeError("CompressedSet can only store string values");
+    }
   }
 
   _kv(entry) {

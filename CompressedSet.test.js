@@ -33,6 +33,15 @@ describe("basic operation", () => {
     expect(set.contains("a")).toBe(false);
   });
 
+  it('does not accept non-strings', () => {
+    const set = new CompressedSet();
+    expect(() => set.add(false)).toThrow();
+    expect(() => set.add(true)).toThrow();
+    expect(() => set.add({})).toThrow();
+    expect(() => set.add([])).toThrow();
+    expect(() => set.add(10)).toThrow();
+  });
+
   test("it can be initialized with an ArrayBuffer", () => {
     const set = new CompressedSet();
     set.add("a");
