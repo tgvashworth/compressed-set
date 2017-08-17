@@ -97,9 +97,19 @@ class CompressedSet {
     return this;
   }
 
+  remove(entry) {
+    if (this.contains(entry)) {
+      const { k, v } = this._kv(entry);
+      this._vs(v).forEach((vByte, i) => {
+        this.valuesView.setUint8(k + i, 0);
+      });
+    }
+
+    return this;
+  }
+
   contains(entry) {
     const { k, v } = this._kv(entry);
-    const vs = this._vs(v);
 
     return this._vs(v).every(
       (vByte, i) => this.valuesView.getUint8(k + i) === vByte

@@ -25,6 +25,14 @@ describe("basic operation", () => {
     });
   });
 
+  test("items can be removed", () => {
+    const set = new CompressedSet();
+    set.add("a");
+    expect(set.contains("a")).toBe(true);
+    set.remove("a");
+    expect(set.contains("a")).toBe(false);
+  });
+
   test("it can be initialized with an ArrayBuffer", () => {
     const set = new CompressedSet();
     set.add("a");
