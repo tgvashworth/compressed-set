@@ -23,8 +23,6 @@ for (let id of ids) {
   hset.add(id);
 }
 
-console.log(hset.encode());
-
 // sample a random ids from the orignal list for testing
 const test_ids = random.sample(ids, 100);
 
@@ -42,9 +40,7 @@ for (let id of other_ids_deduped) {
   }
 }
 
-const set_max_size = 512 * 8 / 8;
-
-results.push(["512", "8", set_max_size, false_negatives, false_positives]);
+results.push([CompressedSet.DEFAULT_NUM_VALUES, CompressedSet.DEFAULT_BYTES_PER_VALUE, hset.buffer.byteLength, false_negatives, false_positives]);
 //}
 //}
 
