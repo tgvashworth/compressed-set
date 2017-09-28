@@ -15,36 +15,38 @@ const other_ids_deduped = source_ids.slice(200).filter(i => !ids.includes(i));
 //const value_sizes = [4, 6, 8];
 const results = [];
 
+console.log("configuration,size (bytes),false negatives,false positives");
 //for (let s of sizes) {
 //for (let v of value_sizes) {
-const hset = new CompressedSet();
+Array.from({ length: 1 }).forEach(() => {
+  const hset = new CompressedSet();
 
-for (let id of ids) {
-  hset.add(id);
-}
-
-// sample a random ids from the orignal list for testing
-const test_ids = random.sample(ids, 100);
-
-let false_negatives = 0;
-for (let id of test_ids) {
-  if (!hset.contains(id)) {
-    false_negatives += 1;
+  for (let id of ids) {
+    hset.add(id);
   }
-}
 
-let false_positives = 0;
-for (let id of other_ids_deduped) {
-  if (hset.contains(id)) {
-    false_positives += 1;
+  // sample a random ids from the orignal list for testing
+  const test_ids = random.sample(ids, 100);
+
+  let false_negatives = 0;
+  for (let id of test_ids) {
+    if (!hset.contains(id)) {
+      false_negatives += 1;
+    }
   }
-}
 
-results.push([CompressedSet.DEFAULT_NUM_VALUES, CompressedSet.DEFAULT_BYTES_PER_VALUE, hset.buffer.byteLength, false_negatives, false_positives]);
-//}
-//}
+  let false_positives = 0;
+  for (let id of other_ids_deduped) {
+    if (hset.contains(id)) {
+      false_positives += 1;
+    }
+  }
 
-console.log("configuration,size (bytes),false negatives,false positives");
-results.forEach(([s, v, size, f_n, f_p]) => {
+  const [s, v, size, f_n, f_p] = [CompressedSet.DEFAULT_NUM_VALUES, CompressedSet.DEFAULT_BYTES_PER_VALUE, hset.buffer.byteLength, false_negatives, false_positives];
   console.log(`${s}/${v},${size},${f_n},${f_p}`);
 });
+//}
+//}
+
+//results.forEach(([s, v, size, f_n, f_p]) => {
+//});
