@@ -63,9 +63,9 @@ describe("basic operation", () => {
   });
 
   test("it throws a relevant error message if ArrayBuffer is the wrong length", () => {
-    const buf = new ArrayBuffer(4);
+    const buf = new ArrayBuffer(1);
     expect(() => new CompressedSet(buf)).toThrow(
-      "ArrayBuffer argument to CompressedSet constructor must have byteLength of 771"
+      "ArrayBuffer argument to CompressedSet constructor must have a byteLength of at least 2"
     );
   });
 });

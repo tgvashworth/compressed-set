@@ -19,7 +19,16 @@ const URLSafeBase64 = require("urlsafe-base64");
  * at each index. It ignores collisons.
  *
  * Digest is expected a base64 encoded hexidecimal string:
- * [ 2 bytes for the value count ][ 1 bytes for bytes per value ][ the rest are entries ]
+
+    [ 4 bits (V) ][ 4 bits (unused) ][ 4 bits (p) ][ 4 bits (q) ]
+    [ p bytes (M) ][ q bytes (N) ]
+    [ M * N bytes ]
+
+ * To enable future extension, the encoded string contains a version number (V) to allow
+ * identification of the encoding rules.
+ *
+ * The bytes required for the M and N values are also encoded as p and q. These are expected
+ * to be small, but are there to enable the CompressedSet to become very large.
  */
 
 const Base64 = {
@@ -27,13 +36,61 @@ const Base64 = {
   decode: s => URLSafeBase64.decode(s).toString("ascii")
 };
 
+const Constants = {
+  DEFAULT_P: 2,
+  DEFAULT_Q: 1,
+
+  DEFAULT_NUM_VALUES: 256,
+  DEFAULT_BYTES_PER_VALUE: 3,
+
+  V_BITS: 4,
+  P_BITS: 4,
+  Q_BITS: 4
+};
+
+Constants.MINIMUM_BYTE_LENGTH = Math.ceil(
+  (
+    Constants.V_BITS +
+    Constants.P_BITS +
+    Constants.Q_BITS
+  ) / 8
+);
+
+
+class NibbleView {
+  constructor(buffer, startByte) {
+    this.view = new DataView(
+      buffer,
+      startByte,
+      1
+    );
+  }
+
+  getFirst() {
+    return this.view.getUint8(0) >> 4;
+  }
+
+  getSecond() {
+    return this.view.getUint8(0) & (255 >> 4);
+  }
+
+  setFirst(v) {
+    return this.view.setUint8(
+      0,
+      ((v << 4) | this.getSecond()) & 255
+    );
+  }
+
+  setSecond(v) {
+    return this.view.setUint8(
+      0,
+      (this.getFirst() << 4) | (v & 15)
+    );
+  }
+}
+
 class CompressedSet {
   constructor(buffer) {
-    const bufferByteLength =
-      CompressedSet.NUM_VALUES_BYTES +
-      CompressedSet.BYTES_PER_VALUE_BYTES +
-      CompressedSet.DEFAULT_NUM_VALUES * CompressedSet.DEFAULT_BYTES_PER_VALUE;
-
     if (buffer) {
       if (!(buffer instanceof ArrayBuffer)) {
         throw new TypeError(
@@ -41,46 +98,82 @@ class CompressedSet {
         );
       }
 
-      if (buffer.byteLength !== bufferByteLength) {
+      if (buffer.byteLength < Constants.MINIMUM_BYTE_LENGTH) {
         throw new TypeError(
-          `ArrayBuffer argument to CompressedSet constructor must have byteLength of ${bufferByteLength}`
+          `ArrayBuffer argument to CompressedSet constructor must have a byteLength of at least ${Constants.MINIMUM_BYTE_LENGTH}`
         );
       }
     }
 
-    this.buffer = buffer || new ArrayBuffer(bufferByteLength);
+    this.buffer = buffer || this.getBuffer(/* config goes here */);
+    this.vView = new NibbleView(this.buffer, 0);
+    this.pQView = new NibbleView(this.buffer, 1);
+
+    if (!buffer) {
+      this.pQView.setFirst(Constants.DEFAULT_P);
+      this.pQView.setSecond(Constants.DEFAULT_Q);
+    }
+
+    this.config = {
+      V: this.vView.getFirst(),
+      p: this.pQView.getFirst(),
+      q: this.pQView.getSecond()
+    };
+
     this.numValuesView = new DataView(
       this.buffer,
-      0,
-      CompressedSet.NUM_VALUES_BYTES
+      Constants.MINIMUM_BYTE_LENGTH,
+      this.config.p
     );
     this.bytesPerValueView = new DataView(
       this.buffer,
-      CompressedSet.NUM_VALUES_BYTES,
-      CompressedSet.BYTES_PER_VALUE_BYTES
+      Constants.MINIMUM_BYTE_LENGTH + this.config.p,
+      this.config.q
     );
     this.valuesView = new DataView(
       this.buffer,
-      CompressedSet.NUM_VALUES_BYTES + CompressedSet.BYTES_PER_VALUE_BYTES
+      Constants.MINIMUM_BYTE_LENGTH + this.config.p + this.config.q
     );
 
     if (!buffer) {
-      this.numValuesView.setUint16(0, CompressedSet.DEFAULT_NUM_VALUES);
-    }
-    if (!buffer) {
-      this.bytesPerValueView.setUint8(0, CompressedSet.DEFAULT_BYTES_PER_VALUE);
+      this.vView.setFirst(1);
+      this.pQView.setFirst(this.config.p);
+      this.pQView.setSecond(this.config.q);
+      this.numValuesView.setUint16(0, Constants.DEFAULT_NUM_VALUES);
+      this.bytesPerValueView.setUint8(0, Constants.DEFAULT_BYTES_PER_VALUE);
     }
 
     this.indexMask = this.numValues - 1;
     this.valueMask = Math.pow(2, this.bytesPerValue * 8) - 1;
   }
 
+  getBuffer({
+    p = 2,
+    q = 1,
+    M = Constants.DEFAULT_NUM_VALUES,
+    N = Constants.DEFAULT_BYTES_PER_VALUE
+  } = {}) {
+    return new ArrayBuffer(
+      Constants.MINIMUM_BYTE_LENGTH +
+      p + q +
+      M * N
+    );
+  }
+
   get numValues() {
-    return this.numValuesView.getUint16(0);
+    const { p: bytes } = this.config;
+    return Array.from({ length: bytes }).reduce((acc, _, i) => {
+      const shift = (bytes - i - 1) * 8;
+      return acc | (this.numValuesView.getUint8(i) << shift);
+    }, 0);
   }
 
   get bytesPerValue() {
-    return this.bytesPerValueView.getUint8(0);
+    const { q: bytes } = this.config;
+    return Array.from({ length: bytes }).reduce((acc, _, i) => {
+      const shift = (bytes - i - 1) * 8;
+      return acc | (this.bytesPerValueView.getUint8(i) << shift);
+    }, 0);
   }
 
   toString() {
@@ -146,11 +239,6 @@ class CompressedSet {
     return Base64.encode(Buffer.from(this.buffer).toString("hex"));
   }
 }
-
-CompressedSet.NUM_VALUES_BYTES = 2;
-CompressedSet.BYTES_PER_VALUE_BYTES = 1;
-CompressedSet.DEFAULT_NUM_VALUES = 256;
-CompressedSet.DEFAULT_BYTES_PER_VALUE = 3;
 
 CompressedSet.decode = function decode(encodedDigest) {
   const digest = Base64.decode(encodedDigest);

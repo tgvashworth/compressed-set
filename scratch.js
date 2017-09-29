@@ -42,7 +42,7 @@ Array.from({ length: 1 }).forEach(() => {
     }
   }
 
-  const [s, v, size, f_n, f_p] = [CompressedSet.DEFAULT_NUM_VALUES, CompressedSet.DEFAULT_BYTES_PER_VALUE, hset.buffer.byteLength, false_negatives, false_positives];
+  const [s, v, size, f_n, f_p] = [hset.numValues, hset.bytesPerValue, hset.buffer.byteLength, false_negatives, false_positives];
   console.log(`${s}/${v},${size},${f_n},${f_p}`);
 });
 //}
