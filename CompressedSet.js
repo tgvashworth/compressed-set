@@ -49,43 +49,28 @@ const Constants = {
 };
 
 Constants.MINIMUM_BYTE_LENGTH = Math.ceil(
-  (
-    Constants.V_BITS +
-    Constants.P_BITS +
-    Constants.Q_BITS
-  ) / 8
+  (Constants.V_BITS + Constants.P_BITS + Constants.Q_BITS) / 8
 );
-
 
 class NibbleView {
   constructor(buffer, startByte) {
-    this.view = new DataView(
-      buffer,
-      startByte,
-      1
-    );
+    this.view = new DataView(buffer, startByte, 1);
   }
 
-  getFirst() {
+  getHigh() {
     return this.view.getUint8(0) >> 4;
   }
 
-  getSecond() {
+  getLow() {
     return this.view.getUint8(0) & (255 >> 4);
   }
 
-  setFirst(v) {
-    return this.view.setUint8(
-      0,
-      ((v << 4) | this.getSecond()) & 255
-    );
+  setHigh(v) {
+    return this.view.setUint8(0, ((v << 4) | this.getLow()) & 255);
   }
 
-  setSecond(v) {
-    return this.view.setUint8(
-      0,
-      (this.getFirst() << 4) | (v & 15)
-    );
+  setLow(v) {
+    return this.view.setUint8(0, (this.getHigh() << 4) | (v & 15));
   }
 }
 
@@ -110,14 +95,14 @@ class CompressedSet {
     this.pQView = new NibbleView(this.buffer, 1);
 
     if (!buffer) {
-      this.pQView.setFirst(Constants.DEFAULT_P);
-      this.pQView.setSecond(Constants.DEFAULT_Q);
+      this.pQView.setHigh(Constants.DEFAULT_P);
+      this.pQView.setLow(Constants.DEFAULT_Q);
     }
 
     this.config = {
-      V: this.vView.getFirst(),
-      p: this.pQView.getFirst(),
-      q: this.pQView.getSecond()
+      V: this.vView.getHigh(),
+      p: this.pQView.getHigh(),
+      q: this.pQView.getLow()
     };
 
     this.numValuesView = new DataView(
@@ -136,9 +121,9 @@ class CompressedSet {
     );
 
     if (!buffer) {
-      this.vView.setFirst(1);
-      this.pQView.setFirst(this.config.p);
-      this.pQView.setSecond(this.config.q);
+      this.vView.setHigh(1);
+      this.pQView.setHigh(this.config.p);
+      this.pQView.setLow(this.config.q);
       this.numValuesView.setUint16(0, Constants.DEFAULT_NUM_VALUES);
       this.bytesPerValueView.setUint8(0, Constants.DEFAULT_BYTES_PER_VALUE);
     }
@@ -147,17 +132,15 @@ class CompressedSet {
     this.valueMask = Math.pow(2, this.bytesPerValue * 8) - 1;
   }
 
-  getBuffer({
-    p = 2,
-    q = 1,
-    M = Constants.DEFAULT_NUM_VALUES,
-    N = Constants.DEFAULT_BYTES_PER_VALUE
-  } = {}) {
-    return new ArrayBuffer(
-      Constants.MINIMUM_BYTE_LENGTH +
-      p + q +
-      M * N
-    );
+  getBuffer(
+    {
+      p = 2,
+      q = 1,
+      M = Constants.DEFAULT_NUM_VALUES,
+      N = Constants.DEFAULT_BYTES_PER_VALUE
+    } = {}
+  ) {
+    return new ArrayBuffer(Constants.MINIMUM_BYTE_LENGTH + p + q + M * N);
   }
 
   get numValues() {

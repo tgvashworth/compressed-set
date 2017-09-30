@@ -42,7 +42,13 @@ Array.from({ length: 1 }).forEach(() => {
     }
   }
 
-  const [s, v, size, f_n, f_p] = [hset.numValues, hset.bytesPerValue, hset.buffer.byteLength, false_negatives, false_positives];
+  const [s, v, size, f_n, f_p] = [
+    hset.numValues,
+    hset.bytesPerValue,
+    hset.buffer.byteLength,
+    false_negatives,
+    false_positives
+  ];
   console.log(`${s}/${v},${size},${f_n},${f_p}`);
 });
 //}

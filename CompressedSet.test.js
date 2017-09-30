@@ -33,7 +33,7 @@ describe("basic operation", () => {
     expect(set.contains("a")).toBe(false);
   });
 
-  it('does not accept non-strings', () => {
+  it("does not accept non-strings", () => {
     const set = new CompressedSet();
     expect(() => set.add(false)).toThrow();
     expect(() => set.add(true)).toThrow();
