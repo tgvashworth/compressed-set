@@ -1,5 +1,6 @@
 const MurmurHash3 = require("imurmurhash");
 const URLSafeBase64 = require("urlsafe-base64");
+const NibbleView = require("./NibbleView");
 
 /**
  * The CompressedSet is a lossy, compressed set data structure inspired by Jeff Hodges'
@@ -52,28 +53,6 @@ Constants.MINIMUM_BYTE_LENGTH = Math.ceil(
   (Constants.V_BITS + Constants.P_BITS + Constants.Q_BITS) / 8
 );
 
-class NibbleView {
-  constructor(buffer, startByte) {
-    this.view = new DataView(buffer, startByte, 1);
-  }
-
-  getHigh() {
-    return this.view.getUint8(0) >> 4;
-  }
-
-  getLow() {
-    return this.view.getUint8(0) & (255 >> 4);
-  }
-
-  setHigh(v) {
-    return this.view.setUint8(0, ((v << 4) | this.getLow()) & 255);
-  }
-
-  setLow(v) {
-    return this.view.setUint8(0, (this.getHigh() << 4) | (v & 15));
-  }
-}
-
 class CompressedSet {
   constructor(buffer) {
     if (buffer) {
@@ -95,14 +74,14 @@ class CompressedSet {
     this.pQView = new NibbleView(this.buffer, 1);
 
     if (!buffer) {
-      this.pQView.setHigh(Constants.DEFAULT_P);
-      this.pQView.setLow(Constants.DEFAULT_Q);
+      this.pQView.setFirst(Constants.DEFAULT_P);
+      this.pQView.setSecond(Constants.DEFAULT_Q);
     }
 
     this.config = {
-      V: this.vView.getHigh(),
-      p: this.pQView.getHigh(),
-      q: this.pQView.getLow()
+      V: this.vView.getFirst(),
+      p: this.pQView.getFirst(),
+      q: this.pQView.getSecond()
     };
 
     this.numValuesView = new DataView(
@@ -121,9 +100,9 @@ class CompressedSet {
     );
 
     if (!buffer) {
-      this.vView.setHigh(1);
-      this.pQView.setHigh(this.config.p);
-      this.pQView.setLow(this.config.q);
+      this.vView.setFirst(1);
+      this.pQView.setFirst(this.config.p);
+      this.pQView.setSecond(this.config.q);
       this.numValuesView.setUint16(0, Constants.DEFAULT_NUM_VALUES);
       this.bytesPerValueView.setUint8(0, Constants.DEFAULT_BYTES_PER_VALUE);
     }
