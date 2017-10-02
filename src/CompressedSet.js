@@ -1,6 +1,6 @@
 const MurmurHash3 = require("imurmurhash");
-const URLSafeBase64 = require("urlsafe-base64");
 const NibbleView = require("./NibbleView");
+const Base64 = require("./Base64");
 
 /**
  * The CompressedSet is a lossy, compressed set data structure inspired by Jeff Hodges'
@@ -31,11 +31,6 @@ const NibbleView = require("./NibbleView");
  * The bytes required for the M and N values are also encoded as p and q. These are expected
  * to be small, but are there to enable the CompressedSet to become very large.
  */
-
-const Base64 = {
-  encode: s => URLSafeBase64.encode(Buffer.from(s, "utf8")),
-  decode: s => URLSafeBase64.decode(s).toString("ascii")
-};
 
 const Constants = {
   DEFAULT_P: 2,
