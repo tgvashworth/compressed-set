@@ -119,18 +119,12 @@ class CompressedSet {
 
   get numValues() {
     const { p: bytes } = this.config;
-    return Array.from({ length: bytes }).reduce((acc, _, i) => {
-      const shift = (bytes - i - 1) * 8;
-      return acc | (this.numValuesView.getUint8(i) << shift);
-    }, 0);
+    return this._readBytes(this.numValuesView, bytes);
   }
 
   get bytesPerValue() {
     const { q: bytes } = this.config;
-    return Array.from({ length: bytes }).reduce((acc, _, i) => {
-      const shift = (bytes - i - 1) * 8;
-      return acc | (this.bytesPerValueView.getUint8(i) << shift);
-    }, 0);
+    return this._readBytes(this.bytesPerValueView, bytes);
   }
 
   toString() {
@@ -190,6 +184,13 @@ class CompressedSet {
       vs[i] = (v >> (shift * 8)) & mask;
     }
     return vs;
+  }
+
+  _readBytes(view, bytes) {
+    return Array.from({ length: bytes }).reduce((acc, _, i) => {
+      const shift = (bytes - i - 1) * 8;
+      return acc | (view.getUint8(i) << shift);
+    }, 0);
   }
 
   encode() {
